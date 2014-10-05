@@ -12,10 +12,18 @@
             minutes: $('#countdown-minutes'),
             seconds: $('#countdown-seconds')
         };
-
-    $('#countdown').countdown(date).on('update.countdown', function(event) {
-        $countdownNumbers.days.text(event.offset.totalDays);
-        $countdownNumbers.hours.text(('0' + event.offset.hours).slice(-2));
-        $countdownNumbers.minutes.text(('0' + event.offset.minutes).slice(-2));
-        $countdownNumbers.seconds.text(('0' + event.offset.seconds).slice(-2));
-    });
+		
+	if(date > new Date()) {
+		$('#countdown').countdown(date)
+					.on('update.countdown', function(event) {
+					$countdownNumbers.days.text(event.offset.totalDays);
+					$countdownNumbers.hours.text(('0' + event.offset.hours).slice(-2));
+					$countdownNumbers.minutes.text(('0' + event.offset.minutes).slice(-2));
+					$countdownNumbers.seconds.text(('0' + event.offset.seconds).slice(-2));
+					}).on('finish.countdown', function(event) {
+						$('#countdown').fadeOut();
+					});
+	}
+	else {
+		$('#countdown').hide();
+	}
