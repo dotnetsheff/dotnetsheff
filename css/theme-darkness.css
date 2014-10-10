@@ -1,0 +1,26 @@
+
+
+/*      Darkness
+----------------------------------------------------------*/
+
+.theme-darkness .subscription-form-email:focus {
+    border-color: #999;
+}
+
+.theme-darkness .subscription-form-submit {
+    background: #999;
+}
+
+.theme-darkness .subscription-form-submit:hover,
+.theme-darkness .subscription-form-submit:focus {
+    background: #777;
+}
+
+.theme-darkness .subscription-form-submit:active {
+    background: #555;
+}
+
+.theme-darkness .social-links > a:hover,
+.theme-darkness .social-links > a:focus {
+    background: #999;
+}

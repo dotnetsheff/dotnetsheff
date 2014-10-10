@@ -1,0 +1,27 @@
+
+/*      Nature
+----------------------------------------------------------*/
+
+.theme-nature .subscription-form-email:focus {
+    border-color: #00b159;
+}
+
+.theme-nature .subscription-form-submit {
+    background: #00b159;
+}
+
+.theme-nature .subscription-form-submit:hover,
+.theme-nature .subscription-form-submit:focus {
+    background: #00984c;
+}
+
+.theme-nature .subscription-form-submit:active {
+    background: #00743a;
+}
+
+.theme-nature .social-links > a:hover,
+.theme-nature .social-links > a:focus {
+    background: #00b159;
+}
+
+
