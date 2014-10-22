@@ -115,6 +115,9 @@ a:focus {
 	padding-bottom: 12px;
 }
 
+.past-events .event .description{
+	font-size: 0.9em;
+}
 
 /*
         Countdown
