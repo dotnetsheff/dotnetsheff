@@ -10,17 +10,17 @@
 	    <meta name="author" content="Kevin Smith, Robert Bell">
 	    <meta name="HandheldFriendly" content="True" />
 
-		
+
         <!-- Favicon -->
-        <link href="/favicon.ico" rel="shortcut icon">
+        <link href="./favicon.ico" rel="shortcut icon">
 
         <link href="//fonts.googleapis.com/css?family=Roboto:300,100" rel="stylesheet">
-        <link href="/css/social-font.css" rel="stylesheet">
+        <link href="./css/social-font.css" rel="stylesheet">
 
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="/css/site.css?v=5" rel="stylesheet">
-		<link href="/css/theme-ice.css?v=2" rel="stylesheet">
+        <link href="./css/site.css?v=5" rel="stylesheet">
+		<link href="./css/theme-ice.css?v=2" rel="stylesheet">
     </head>
 
     <body class="theme-ice">
@@ -54,43 +54,36 @@
                 <!-- Description -->
 				<div itemscope itemtype="http://schema.org/Event">
 					<div class="row">
-						<h2 class="col-sm-8 col-sm-offset-2" itemprop="name">Lightning Talks!</h1>
+						<h2 class="col-sm-8 col-sm-offset-2" itemprop="name">It Doesn't Have to End in Tiers</h1>
 						<meta itemprop="startDate" content="2014-11-04T18:30">
-						<p class="col-sm-8 col-sm-offset-2" >Tue 04, November 2014 6:30pm</p>
+						<p class="col-sm-8 col-sm-offset-2" >Andrew Gunn (<a href="http://twitter.com/andrewgunn" target="blank">@andrewgunn</a>) - Tue 02, December 2014 6:30pm</p>
 					</div>
 					<div class="row">
 						<p class="col-sm-8 col-sm-offset-2" itemprop="description">
-							This month we'll be hosting a round of <a href="http://en.wikipedia.org/wiki/Lightning_talk" target="_blank">lightning talks</a>. 
-                            These are a great way to get started with public speaking, but also an effective for experienced speakers to test new material or techniques.
-                            If you’re interested in participating, please get in contact via Twitter (<a href="http://twitter.com/dotnetsheff" target="_blank">@dotnetsheff</a>) or by email (organisers at dotnetsheff.co.uk) ASAP.
+							Are you fed up of working on systems crippled by "traditional" software architecture? The classic n-tier architecture seems to be the one of choice for the majority of applications today, especially the web variety, comprising of several layers such as presentation, business logic, and data. Whilst it seems like a good idea on paper, cons include leaky abstractions throughout the layers, and the reliance on a normalised database that only contains the latest state and couples every consumer to it's schema.
 						</p>
+            <p class="col-sm-8 col-sm-offset-2" itemprop="description">
+              Command Query Responsibility Segregation (CQRS), Domain Driven Design (DDD), and Event Sourcing *could* be the silver bullet...
+            </p>
+            <p class="col-sm-8 col-sm-offset-2" itemprop="description">
+              CQRS forces developers to separate the write/read concerns by using commands and queries respectively. By doing so, each command/query have a single responsibility, whilst giving clear contextualisation. DDD compliments CQRS by modelling the business' requirements by creating a rich domain, without giving any consideration to the storage mechanism. The building blocks include aggregates, entities, value objects, domain events, services, and repositories. Command handlers interact with the aggregate(s) to perform business operations based on a particular command. By utilising Event Sourcing, each change of state is encapsulated within a domain event, serialised, and persisted. Instead of selecting rows from a database, domain objects are hydrated by replaying each event in the same sequence.
+            </p>
+            <p class="col-sm-8 col-sm-offset-2" itemprop="description">
+              This presentation will provide a high level overview of CQRS, DDD, Event Sourcing, and how to use them together. The best way to do this is through code, code, and more code. It'll also cover some of the classic pitfalls with a distributed architecture such as versioning. By the end, you should have a good understanding of why you'd choose such a drastic architecture, and more importantly, when not to.
+            </p>
 					</div>
 					<div class="row">
-						<ul class="col-sm-7 col-sm-offset-3 text-left">
-							  <li><a href="http://twitter.com/johnstovin" target="_blank">@johnstovin</a> - Fixie a Convention-based Test Framework</li>
-							  							  
-							  <li><a href="http://twitter.com/kev_bite" target="_blank">@kev_bite</a> - I Hate Logging</li>
-							  
-							  <li><a href="http://twitter.com/robertjbell89" target="_blank">@robertjbell89</a> - A Brief Overview of Container Technology</li>
-							  
-							  <li><a href="http://twitter.com/sparkeh9" target="_blank">@sparkeh9</a> - Visitor Pattern 101</li>
-							  
-							  <li><a href="http://twitter.com/jamiehinton" target="_blank">@jamiehinton</a> - An Intro to Azure Websites</li>
-							  
-							  <li><a href="http://twitter.com/mgszyman" target="_blank">@mgszyman</a> - AutoFixture, Making Test Setup Easy Peasy</li>
-						</ul>
-					</div>
-					<div class="row">
-						<p class="col-sm-12">  
+						<p class="col-sm-12">
 						</p>
-							
+
 					</div>
 				</div>
+        <!-- end of Event -->
 			   <div class="row">
                     <div class="form-and-links-container col-sm-8 col-sm-offset-2">
                         <div class="row">
                             <div class="input-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
-								<a href="http://goo.gl/AVLmYR"><button class="subscription-form-submit btn">Register for Free</button></a>
+								<a href="http://goo.gl/tBqLZJ" target="_blank"><button class="subscription-form-submit btn">Register for Free</button></a>
 							</div>
 						</div>
 					</div>
@@ -112,7 +105,7 @@
                     </div>
                 </div>
             </div>
-			
+
             <!-- Countdown -->
             <div class="countdown" id="countdown">
                 <div class="container">
@@ -141,12 +134,47 @@
             </div>
             <!-- /Countdown -->
         </div>
-			
+
 <section class="past-events">
-			
+
 			<div class="container">
                 <div class="row">
                     <h2 class="col-sm-8 col-sm-offset-2">Past events</h1>
+                </div>
+
+                <div itemscope itemtype="http://schema.org/Event">
+                  <div class="row">
+                    <h2 class="col-sm-8 col-sm-offset-2" itemprop="name">Lightning Talks!</h1>
+                    <meta itemprop="startDate" content="2014-11-04T18:30">
+                    <p class="col-sm-8 col-sm-offset-2" >Tue 04, November 2014 6:30pm</p>
+                  </div>
+                  <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2" itemprop="description">
+                      This month we'll be hosting a round of <a href="http://en.wikipedia.org/wiki/Lightning_talk" target="_blank">lightning talks</a>.
+                                    These are a great way to get started with public speaking, but also an effective for experienced speakers to test new material or techniques.
+                                    If you’re interested in participating, please get in contact via Twitter (<a href="http://twitter.com/dotnetsheff" target="_blank">@dotnetsheff</a>) or by email (organisers at dotnetsheff.co.uk) ASAP.
+                    </p>
+                  </div>
+                  <div class="row">
+                    <ul class="col-sm-7 col-sm-offset-3 text-left">
+                        <li><a href="http://twitter.com/johnstovin" target="_blank">@johnstovin</a> - Fixie a Convention-based Test Framework</li>
+
+                        <li><a href="http://twitter.com/kev_bite" target="_blank">@kev_bite</a> - I Hate Logging</li>
+
+                        <li><a href="http://twitter.com/robertjbell89" target="_blank">@robertjbell89</a> - A Brief Overview of Container Technology</li>
+
+                        <li><a href="http://twitter.com/sparkeh9" target="_blank">@sparkeh9</a> - Visitor Pattern 101</li>
+
+                        <li><a href="http://twitter.com/jamiehinton" target="_blank">@jamiehinton</a> - An Intro to Azure Websites</li>
+
+                        <li><a href="http://twitter.com/mgszyman" target="_blank">@mgszyman</a> - AutoFixture, Making Test Setup Easy Peasy</li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <p class="col-sm-12">
+                    </p>
+
+                  </div>
                 </div>
                 <!-- Description -->
 				<div class="event" itemscope itemtype="http://schema.org/Event">
@@ -161,7 +189,7 @@
 						</p>
 					</div>
 				</div>
-				
+
                 <!-- Description -->
 				<div class="event" itemscope itemtype="http://schema.org/Event">
 					<div class="row">
@@ -171,11 +199,11 @@
 					</div>
 					<div class="row">
 						<p class="col-sm-8 col-sm-offset-2 description" itemprop="description">
-							ElasticSearch is an open source, distributed search engine based on Lucene that was designed to scale. In this talk Dom Finn (<a href="http://twitter.com/CleverFinn" target="_blank">@CleverFinn</a>) will provide an introduction to ElasticSearch, it's use cases, it's Restful API and it's .NET client called Nest. 
+							ElasticSearch is an open source, distributed search engine based on Lucene that was designed to scale. In this talk Dom Finn (<a href="http://twitter.com/CleverFinn" target="_blank">@CleverFinn</a>) will provide an introduction to ElasticSearch, it's use cases, it's Restful API and it's .NET client called Nest.
 						</p>
 					</div>
 				</div>
-				
+
 				<div class="event" itemscope itemtype="http://schema.org/Event">
 					<div class="row">
 						<h3 class="col-sm-8 col-sm-offset-2" itemprop="name">CQRS & Event Sourcing - An Azure Implementation</h1>
@@ -184,11 +212,11 @@
 					</div>
 					<div class="row">
 						<p class="col-sm-8 col-sm-offset-2 description" itemprop="description">
-							Join us as Andrew Macdonald (<a href="http://twitter.com/andycwk" target="_blank">@andycwk</a>) introduces Command Query Responsibility Segregation and Event Sourcing before demonstrating how these principles can be applied on top of Azure Table Storage by delving into the code of a project he is currently developing. 
+							Join us as Andrew Macdonald (<a href="http://twitter.com/andycwk" target="_blank">@andycwk</a>) introduces Command Query Responsibility Segregation and Event Sourcing before demonstrating how these principles can be applied on top of Azure Table Storage by delving into the code of a project he is currently developing.
 						</p>
 					</div>
 				</div>
-							
+
 				<div class="event" itemscope itemtype="http://schema.org/Event">
 					<div class="row">
 						<h3 class="col-sm-8 col-sm-offset-2" itemprop="name">MongoDB Coding Session</h1>
@@ -201,7 +229,7 @@
 						</p>
 					</div>
 				</div>
-				
+
 				<div class="event" itemscope itemtype="http://schema.org/Event">
 					<div class="row">
 						<h3 class="col-sm-8 col-sm-offset-2" itemprop="name">MongoDB: A Developer's Perspective</h1>
@@ -253,7 +281,7 @@
 						</p>
 					</div>
 				</div>
-				
+
 				<div class="event" itemscope itemtype="http://schema.org/Event">
 					<div class="row">
 						<h3 class="col-sm-8 col-sm-offset-2" itemprop="name">Testing in F# & Immutable collections</h1>
@@ -269,7 +297,7 @@
                 <!-- /Description -->
             </div>
 </section>
-			
+
 			<footer>
 			<div class="container">
 				<div class="row">
@@ -280,15 +308,15 @@
                 <!-- /Description -->
             </div>
 			</footer>
-		
+
         <!-- /Main content -->
 
         <!-- Scripts -->
-        <script src="/js/jquery-1.11.1.min.js"></script>
-        <script src="/js/jquery.countdown.js"></script>
-        <script src="/js/placeholders.min.js"></script>
-        <script src="/js/flat-surface-shader.js"></script>
-        <script src="/js/main.config.js?v=2"></script>
-	   <script src="/js/main.js?v=2"></script>
-    
+        <script src="./js/jquery-1.11.1.min.js"></script>
+        <script src="./js/jquery.countdown.js"></script>
+        <script src="./js/placeholders.min.js"></script>
+        <script src="./js/flat-surface-shader.js"></script>
+        <script src="./js/main.config.js?v=2"></script>
+        <script src="./js/main.js?v=2"></script>
+
 </body></html>
