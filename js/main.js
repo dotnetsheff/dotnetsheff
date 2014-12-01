@@ -27,3 +27,25 @@
 	else {
 		$('#countdown').hide();
 	}
+	
+	(function (snowStorm, undefined) {
+		snowStorm.freezeOnBlur = false;
+		snowStorm.snowColor = '#BFEFFF';
+		snowStorm.snowCharacter = '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>';
+		snowStorm.flakeWidth = 20;
+		snowStorm.flakeHeight = 20;
+		
+		var decorated = snowStorm.SnowFlake;
+		
+		snowStorm.SnowFlake = function (type, x, y) {
+			if (Math.random() >= 0.5) {
+				snowStorm.snowColor = '#BFEFFF';
+			}
+			else {
+				snowStorm.snowColor = '#FFF';
+			}
+		
+			return decorated.call(this, type, x, y);
+		};
+
+	})(snowStorm);
