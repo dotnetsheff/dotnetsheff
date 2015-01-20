@@ -387,7 +387,11 @@ a:focus {
    font-size: 0.8em;	
 }
 
-
+/* location
+==================================================================================================*/
+.location-map {
+	height: 530px;
+}
 
 /*
         Responsiveness
@@ -477,6 +481,10 @@ a:focus {
         font-size: 24px;
         line-height: 42px;
     }
+	
+	.location-map {
+		height: 380px;
+	}
 }
 
 @media (max-width: 550px) {
@@ -504,3 +512,5 @@ a:focus {
         border-right-width: 3px;
     }
 }
+
+
