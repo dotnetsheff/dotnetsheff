@@ -44,7 +44,7 @@
         var map = new google.maps.Map(mapcanvas,
             mapOptions);
 	  
-	   var contentString = 'LOLz';
+	   var contentString = 'dotnetsheff';
 
 		var infowindow = new google.maps.InfoWindow({
 			content: contentString
