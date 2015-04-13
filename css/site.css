@@ -104,11 +104,15 @@ a:focus {
 ==================================================================================================*/
 
 .header {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     font-size: 100px;
     line-height: 1.2;
     font-weight: 100;
 	font-family: 'Special Elite', cursive;
+}
+
+.address {
+    margin-bottom: 30px;
 }
 
 
