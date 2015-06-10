@@ -111,6 +111,10 @@ a:focus {
 	font-family: 'Special Elite', cursive;
 }
 
+.header .middle {
+    color: #32a7d3;
+}
+
 .address {
     margin-bottom: 30px;
 }
