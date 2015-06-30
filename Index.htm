@@ -53,24 +53,24 @@
                 <!-- /Header -->
 
                 <!-- Description -->
-				<div itemscope itemtype="http://schema.org/Event">
+				<div itemscope itemtype="http://schema.org/Event" data-bind="with: nextEvent">
 					<div class="row">
-						<h2 class="col-sm-8 col-sm-offset-2" itemprop="name">July Event</h2>
+						<h2 data-bind="text: title" class="col-sm-8 col-sm-offset-2" itemprop="name"></h2>
 						<meta itemprop="startDate" content="2015-06-02T18:30">
-						<p class="col-sm-8 col-sm-offset-2" ><!-- (<a href="https://twitter.com/" target="blank">@</a>) - -->Tue 07, July 2015 6:30pm</p>
+						<p data-bind="text: moment(time()).format('ddd DD, MMM YYYY hh:mma')" class="col-sm-8 col-sm-offset-2"></p>
 					</div>
 					<div class="row">
-						<p class="col-sm-8 col-sm-offset-2" itemprop="description">
+						<p data-bind="html: description" class="col-sm-8 col-sm-offset-2" itemprop="description">
 							Details to be confirmed
 						</p>
 					</div>
-				</div>
-				<br />
-				<div class="row">
-					<div class="form-and-links-container col-sm-8 col-sm-offset-2">
-						<div class="row">
-							<div class="input-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
-								<a href="http://goo.gl/30Sh3I" target="_blank"><button class="subscription-form-submit btn">Register for Free</button></a>
+					<br />
+					<div class="row">
+						<div class="form-and-links-container col-sm-8 col-sm-offset-2">
+							<div class="row">
+								<div class="input-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+									<a data-bind="attr: { href: eventUrl }" target="_blank"><button class="subscription-form-submit btn">Register for Free</button></a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -94,26 +94,26 @@
             </div>
 
             <!-- Countdown -->
-            <div class="countdown" id="countdown">
+            <div data-bind="with: countdown, visible: countdownVisible" class="countdown" id="countdown">
                 <div class="container">
                     <div class="row">
                         <div class="countdown-item col-sm-3 col-xs-6">
-                            <div class="countdown-number" id="countdown-days">0</div>
+                            <div data-bind="text: offset().totalDays" class="countdown-number" id="countdown-days">0</div>
                             <div class="countdown-label">days</div>
                         </div>
 
                         <div class="countdown-item col-sm-3 col-xs-6">
-                            <div class="countdown-number" id="countdown-hours">0</div>
+                            <div data-bind="text: offset().hours" class="countdown-number" id="countdown-hours">0</div>
                             <div class="countdown-label">hours</div>
                         </div>
 
                         <div class="countdown-item col-sm-3 col-xs-6">
-                            <div class="countdown-number" id="countdown-minutes">0</div>
+                            <div data-bind="text: offset().minutes" class="countdown-number" id="countdown-minutes">0</div>
                             <div class="countdown-label">minutes</div>
                         </div>
 
                         <div class="countdown-item col-sm-3 col-xs-6">
-                            <div class="countdown-number" id="countdown-seconds">0</div>
+                            <div data-bind="text: offset().seconds" class="countdown-number" id="countdown-seconds">0</div>
                             <div class="countdown-label">seconds</div>
                         </div>
                     </div>
@@ -444,11 +444,10 @@
 
         <!-- Scripts -->
 		<script src="./js/jquery-1.11.1.min.js"></script>
-        <script src="./js/jquery.countdown.js"></script>
         <script src="./js/placeholders.min.js"></script>
         <script src="./js/flat-surface-shader.js"></script>
-        <script src="./js/main.config.js?v=12"></script>
-        <script src="./js/main.js?v=11"></script>
-
-
+		<script src="./js/moment.min.jcs.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+        <script src="./js/main.js?v=14"></script>
+		
 </body></html>
