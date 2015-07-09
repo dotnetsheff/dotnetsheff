@@ -61,7 +61,6 @@
 					</div>
 					<div class="row">
 						<p data-bind="html: description" class="col-sm-8 col-sm-offset-2" itemprop="description">
-							Details to be confirmed
 						</p>
 					</div>
 					<br />
@@ -129,6 +128,18 @@
                     <h2 class="col-sm-8 col-sm-offset-2">Past events</h1>
                 </div>
 
+				<div itemscope itemtype="http://schema.org/Event" data-bind="foreach: previousEvents">
+					<div class="row">
+						<h2 data-bind="text: title" class="col-sm-8 col-sm-offset-2" itemprop="name"></h2>
+						<meta itemprop="startDate" data-bind="attr: { content:  moment(time()).toISOString() }" content="">
+						<p data-bind="text: moment(time()).format('ddd DD, MMM YYYY hh:mma')" class="col-sm-8 col-sm-offset-2"></p>
+					</div>
+					<div class="row">
+						<p data-bind="html: description" class="col-sm-8 col-sm-offset-2" itemprop="description">
+						</p>
+					</div>
+				</div>
+				
 				<div itemscope itemtype="http://schema.org/Event">
 					<div class="row">
 						<h2 class="col-sm-8 col-sm-offset-2" itemprop="name">Continuous Delivery as a Service</h2>

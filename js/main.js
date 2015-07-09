@@ -6,7 +6,7 @@ var dotnetsheff = {
 
 dotnetsheff.constants = {
 	meetupApiKey: "18486437f4e51d665652559152c44",
-	groupId: 13372672
+	groupId: 18649738
 };
 
 dotnetsheff.viewModels.EventSummaryViewModel = function(title, time, description, eventUrl) {
@@ -76,7 +76,7 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 				crossDomain: true,
 				dataType: "jsonp",
 				data: {
-					group_id: 18649738,
+					group_id: dotnetsheff.constants.groupId,
 					status: 'upcoming',
 					key: dotnetsheff.constants.meetupApiKey,
 					time: '0m,1m',
@@ -91,8 +91,31 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 		});;
 	};
 	
+	var fetchPreviousEvents = function(){
+		$.ajax({
+				type: "GET",
+				url: "https://api.meetup.com/2/events",
+				crossDomain: true,
+				dataType: "jsonp",
+				data: {
+					group_id: dotnetsheff.constants.groupId,
+					status: 'past',
+					key: dotnetsheff.constants.meetupApiKey
+					}
+			})
+			.done(function(response) {
+				for(var i=0;i < response.results.length; ++i){
+					var result = response.results[i];
+					var event = new dotnetsheff.viewModels.EventSummaryViewModel(result.name, result.time, result.description, result.event_url);
+				
+					self.previousEvents.push(event);
+				}
+		});;
+	};
+	
 	(function(){
 		fetchNextEvents();
+		fetchPreviousEvents();
 	})();
 };
 
