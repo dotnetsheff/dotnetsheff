@@ -83,9 +83,11 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 				}
 			})
 			.done(function(response) {
+				if(response.results.length > 0){
 				var nextEvent = new dotnetsheff.viewModels.EventSummaryViewModel(response.results[0].name, response.results[0].time,response.results[0].description, response.results[0].event_url);
 				
 				self.nextEvent(nextEvent);
+				}
 		});;
 	};
 	
