@@ -5,7 +5,6 @@ var dotnetsheff = {
 };
 
 dotnetsheff.constants = {
-	meetupApiKey: "18486437f4e51d665652559152c44",
 	groupId: 18649738
 };
 
@@ -72,14 +71,13 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 	var fetchNextEvents = function(){
 		$.ajax({
 				type: "GET",
-				url: "https://api.meetup.com/2/events",
+				url: "https://dotnetsheff-api.herokuapp.com/meetup/2/events",
 				crossDomain: true,
 				dataType: "jsonp",
 				data: {
 					group_id: dotnetsheff.constants.groupId,
 					status: 'upcoming',
-					key: dotnetsheff.constants.meetupApiKey,
-					time: '0m,1m',
+					time: '0m,1m'
 				}
 			})
 			.done(function(response) {
@@ -94,13 +92,12 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 	var fetchPreviousEvents = function(){
 		$.ajax({
 				type: "GET",
-				url: "https://api.meetup.com/2/events",
+				url: "https://dotnetsheff-api.herokuapp.com/meetup/2/events",
 				crossDomain: true,
 				dataType: "jsonp",
 				data: {
 					group_id: dotnetsheff.constants.groupId,
-					status: 'past',
-					key: dotnetsheff.constants.meetupApiKey
+					status: 'past'
 					}
 			})
 			.done(function(response) {
