@@ -127,7 +127,7 @@ var mapcanvas = document.getElementById('map-canvas');
 if(mapcanvas){
 
 	  function initialize() {
-		var location = { lat: 53.373379, lng: -1.470429};
+		var location = { lat: 53.3790182, lng: -1.4663497};
 		var mapOptions = {
 		zoom: 16,
 		center: location,
