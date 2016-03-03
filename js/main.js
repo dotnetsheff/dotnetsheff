@@ -77,7 +77,7 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 				data: {
 					group_id: dotnetsheff.constants.groupId,
 					status: 'upcoming',
-					time: '0m,1m'
+					time: '0m,2m'
 				}
 			})
 			.done(function(response) {
