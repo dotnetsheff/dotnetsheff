@@ -119,6 +119,9 @@ a:focus {
     margin-bottom: 30px;
 }
 
+.latest-event p:not(:first-child){
+    display: none;
+}
 
 .past-events .event{
 	padding-bottom: 12px;
@@ -137,6 +140,11 @@ a:focus {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.countdown-items {
+    display: flex;
+    justify-content: center;
+}
+
 .countdown-label {
     margin-top: 10px;
     text-align: center;
@@ -144,7 +152,7 @@ a:focus {
 }
 
 .countdown-number {
-    font-size: 124px;
+    font-size: 4rem;
     line-height: 1;
     font-weight: 100;
     text-shadow: none;
@@ -355,7 +363,6 @@ a:focus {
 }
 
 .social-links {
-    margin-top: 50px;
     font-size: 0;
 }
 
@@ -369,16 +376,16 @@ a:focus {
     text-decoration: none;
     text-shadow: none;
     background: rgba(0, 0, 0, 0.5);
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    transition: 0.3s;
+    -webkit-transition: transform .3s ease-out;
+    -moz-transition: transform .3s ease-out;
+    transition: transform .3s ease-out;
 }
 
 .social-links > a:hover,
 .social-links > a:focus {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 /* footer - past-events
@@ -432,10 +439,6 @@ a:focus {
 
 
 @media (max-width: 767px) {
-    body {
-        padding: 20px;
-    }
-
     body,
     .subscription-form-email,
     .subscription-form-submit {
@@ -447,7 +450,6 @@ a:focus {
     }
 
     .countdown-item {
-        width: 50%;
         margin: 20px 0;
         float: left;
     }
@@ -521,4 +523,6 @@ a:focus {
     }
 }
 
-
+.no-bullets {
+    list-style-type: none;
+}
