@@ -439,10 +439,6 @@ a:focus {
 
 
 @media (max-width: 767px) {
-    body {
-        padding: 20px;
-    }
-
     body,
     .subscription-form-email,
     .subscription-form-submit {
@@ -527,4 +523,6 @@ a:focus {
     }
 }
 
-
+.no-bullets {
+    list-style-type: none;
+}
