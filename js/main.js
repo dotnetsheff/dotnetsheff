@@ -101,7 +101,8 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 					}
 			})
 			.done(function(response) {
-				for(var i=response.results.length - 1;i >= 0 ; --i){
+				var maxPreviousEvents = response.results.length - 4;
+				for(var i=response.results.length - 1; i>=maxPreviousEvents ; --i){
 					var result = response.results[i];
 					var event = new dotnetsheff.viewModels.EventSummaryViewModel(result.name, result.time, result.description, result.event_url);
 				
