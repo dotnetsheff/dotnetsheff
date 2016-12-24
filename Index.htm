@@ -19,6 +19,8 @@
 
         <link href="/css/bootstrap.min.css" rel="stylesheet">
 
+        <link rel="stylesheet" media="screen" href="christmaslights.css" />
+
         <link href="/css/site.css?v=23" rel="stylesheet">
 		<link href="/css/theme-ice.css?v=2" rel="stylesheet">
     </head>
@@ -45,6 +47,11 @@
         <!-- Main content -->
         <div class="content">
             <div class="container">
+                 <div id="loading">
+                </div>
+                 <div id="lights">
+                </div>
+
                 <!-- Header -->
                 <div class="row">
                     <h1 class="header col-sm-8 col-sm-offset-2">dot<span class="middle">net</span>sheff</h1>
@@ -213,7 +220,16 @@
         <script src="/js/flat-surface-shader.js"></script>
 		<script src="/js/moment.min.jcs.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-        <script src="/js/main.js?v=47c44008-2a66-42ec-8505-e2210ff221fc
-"></script>
+        <script src="/js/main.js?v=47c44008-2a66-42ec-8505-e2210ff221fc"></script>
+        
+        <script src="/js/snowstorm.js"></script>
+
+        <script type="text/javascript" src="soundmanager2-nodebug-jsmin.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&2.6.0/build/animation/animation-min.js"></script>
+        <script type="text/javascript" src="christmaslights.js"></script>
+        <script type="text/javascript">
+        var urlBase = './';
+        soundManager.url = './';
+        </script>
 
 </body></html>
