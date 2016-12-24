@@ -67,6 +67,10 @@ dotnetsheff.viewModels.HomeViewModel = function() {
 		
 		self.countdown(new dotnetsheff.viewModels.CountDownViewModel(miliseconds));
 	});
+
+	self.isLoading = ko.computed(function() {
+		return self.nextEvent() === undefined;
+	}, self);
 		
 	var fetchNextEvents = function(){
 		$.ajax({

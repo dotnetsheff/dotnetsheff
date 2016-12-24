@@ -21,7 +21,8 @@
 
         <link rel="stylesheet" media="screen" href="christmaslights.css" />
 
-        <link href="/css/site.css?v=23" rel="stylesheet">
+        <link href="/css/site.css?v=e61f898d-0b27-4215-a982-5616a90f11d5" rel="stylesheet">
+        
 		<link href="/css/theme-ice.css?v=2" rel="stylesheet">
     </head>
 
@@ -60,6 +61,11 @@
                 <!-- /Header -->
 
                 <!-- Description -->
+                <div data-bind="if: isLoading">
+                <div class="row">
+                    <div class="cp-spinner cp-flip"></div>
+                </div>
+                </div>
 				<div itemscope itemtype="http://schema.org/Event" data-bind="with: nextEvent">
 					<div class="row">
 						<h2 data-bind="text: title" class="col-sm-8 col-sm-offset-2" itemprop="name"></h2>
@@ -220,7 +226,7 @@
         <script src="/js/flat-surface-shader.js"></script>
 		<script src="/js/moment.min.jcs.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-        <script src="/js/main.js?v=47c44008-2a66-42ec-8505-e2210ff221fc"></script>
+        <script src="/js/main.js?v=e61f898d-0b27-4215-a982-5616a90f11d5"></script>
         
         <script src="/js/snowstorm.js"></script>
 
