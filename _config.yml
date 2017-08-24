@@ -1,0 +1,17 @@
+title: dotnetsheff
+email: 
+description: >
+  dotnetsheff is a monthly user group focused on
+  software development, particularly in the .NET
+  ecosystem. We welcome people with interests in
+  software development of all ages and levels of experience.
+baseurl: ""
+url: "https://dotnetsheff.co.uk"
+social_links:
+  facebook: dotnetsheff
+  twitter: dotnetsheff
+  github: dotnetsheff
+  google: +dotnetsheffCoUk
+
+# Build settings
+markdown: kramdown

@@ -1,163 +1,221 @@
-
-var dotnetsheff = {
-	constants: {},
-	viewModels: {}
-};
-
-dotnetsheff.constants = {
-	groupId: 18649738
-};
-
-dotnetsheff.viewModels.EventSummaryViewModel = function(title, time, description, eventUrl) {
-	var self = this;
+;(function () {
 	
-	self.title = ko.observable(title);
-	self.time = ko.observable(time);
-	self.description = ko.observable(description);
-	self.eventUrl = ko.observable(eventUrl);
-};
+	'use strict';
 
-dotnetsheff.viewModels.CountDownViewModel = function(miliseconds) {
-	var self = this;
-	
-	self.totalSecsLeft = ko.observable(miliseconds / 1000);
-	
-	self.isVisible = ko.computed(function() {
-		return this.totalSecsLeft() > 0;
-	}, self);
-	
-	var tickDown = function(){
-		self.totalSecsLeft(self.totalSecsLeft() - 1);
-		
-		if(self.totalSecsLeft() > 0) {
-			setTimeout(tickDown, 1000);
+
+
+	// iPad and iPod detection	
+	var isiPad = function(){
+		return (navigator.platform.indexOf("iPad") != -1);
+	};
+
+	var isiPhone = function(){
+	    return (
+			(navigator.platform.indexOf("iPhone") != -1) || 
+			(navigator.platform.indexOf("iPod") != -1)
+	    );
+	};
+
+	// Go to next section
+	var gotToNextSection = function(){
+		var el = $('.learn-more'),
+			w = el.width(),
+			divide = -w/2;
+		el.css('margin-left', divide);
+	};
+
+	// Loading page
+	var loaderPage = function() {
+		$(".loader").fadeOut("slow");
+	};
+
+	// FullHeight
+	var fullHeight = function() {
+		if ( !isiPad() && !isiPhone() ) {
+			$('.js-fullheight').css('height', $(window).height() - 49);
+			$(window).resize(function(){
+				$('.js-fullheight').css('height', $(window).height() - 49);
+			})
 		}
 	};
-	
-	self.offset = ko.computed(function() {
-		return {
-                seconds: Math.floor(this.totalSecsLeft() % 60),
-                minutes: Math.floor(this.totalSecsLeft() / 60) % 60,
-                hours: Math.floor(this.totalSecsLeft() / 60 / 60) % 24,
-                days: Math.floor(this.totalSecsLeft() / 60 / 60 / 24) % 7,
-                totalDays: Math.floor(this.totalSecsLeft() / 60 / 60 / 24),
-                weeks: Math.floor(this.totalSecsLeft() / 60 / 60 / 24 / 7),
-                months: Math.floor(this.totalSecsLeft() / 60 / 60 / 24 / 30),
-                years: Math.floor(this.totalSecsLeft() / 60 / 60 / 24 / 365)
-            };
-	}, self);
-	
-	setTimeout(tickDown, 1000);
 
-};
+	var toggleBtnColor = function() {
 
-dotnetsheff.viewModels.HomeViewModel = function() {
-	var self = this;
-	self.nextEvent = ko.observable();
-	self.previousEvents = ko.observableArray();
 	
-	self.countdown = ko.observable();
-	
-	self.countdownVisible = ko.computed(function() {
-		return this.countdown() && this.countdown().isVisible();
-	}, self);
-	
-	self.nextEvent.subscribe(function (newValue) {
-		var miliseconds = moment(newValue.time()).diff(moment(new Date()));
-		
-		self.countdown(new dotnetsheff.viewModels.CountDownViewModel(miliseconds));
-	});
-
-	self.isLoading = ko.computed(function() {
-		return self.nextEvent() === undefined;
-	}, self);
-		
-	var fetchNextEvents = function(){
-		$.ajax({
-				type: "GET",
-				url: "https://dotnetsheff-api.herokuapp.com/meetup/2/events",
-				crossDomain: true,
-				dataType: "jsonp",
-				data: {
-					group_id: dotnetsheff.constants.groupId,
-					status: 'upcoming',
-					time: '0m,2m'
+		if ( $('#hero').length > 0 ) {	
+			$('#hero').waypoint( function( direction ) {
+				if( direction === 'down' ) {
+					$('.nav-toggle').addClass('dark');
 				}
-			})
-			.done(function(response) {
-				if(response.results.length > 0){
-				var nextEvent = new dotnetsheff.viewModels.EventSummaryViewModel(response.results[0].name, response.results[0].time,response.results[0].description, response.results[0].event_url);
+			} , { offset: - $('#hero').height() } );
+
+			$('#hero').waypoint( function( direction ) {
+				if( direction === 'up' ) {
+					$('.nav-toggle').removeClass('dark');
+				}
+			} , { 
+				offset:  function() { return -$(this.element).height() + 0; }
+			} );
+		}
+
+
+
+	};
+
+
+	// Scroll Next
+	var ScrollNext = function() {
+		$('body').on('click', '.scroll-btn', function(e){
+			e.preventDefault();
+
+			$('html, body').animate({
+				scrollTop: $( $(this).closest('[data-next="yes"]').next()).offset().top
+			}, 1000, 'easeInOutExpo');
+			return false;
+		});
+	};
+
+	// Click outside of offcanvass
+	var mobileMenuOutsideClick = function() {
+
+		$(document).click(function (e) {
+	    var container = $("#offcanvas, .js-nav-toggle");
+	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+
+	    	if ( $('body').hasClass('offcanvas-visible') ) {
+
+    			$('body').removeClass('offcanvas-visible');
+    			$('.js-nav-toggle').removeClass('active');
 				
-				self.nextEvent(nextEvent);
-				}
-		});;
+	    	}
+	    
+	    	
+	    }
+		});
+
 	};
+
+
+	// Offcanvas
+	var offcanvasMenu = function() {
+		$('body').prepend('<div id="offcanvas" />');
+		$('#offcanvas').prepend('<ul id="side-links">');
+		$('body').prepend('<a href="#" class="js-nav-toggle nav-toggle"><i></i></a>');
+
+		$('.left-menu li, .right-menu li').each(function(){
+
+			var $this = $(this);
+
+			$('#offcanvas ul').append($this.clone());
+
+		});
+	};
+
+	// Burger Menu
+	var burgerMenu = function() {
+
+		$('body').on('click', '.js-nav-toggle', function(event){
+			var $this = $(this);
+
+			$('body').toggleClass('overflow offcanvas-visible');
+			$this.toggleClass('active');
+			event.preventDefault();
+
+		});
+
+		$(window).resize(function() {
+			if ( $('body').hasClass('offcanvas-visible') ) {
+		   	$('body').removeClass('offcanvas-visible');
+		   	$('.js-nav-toggle').removeClass('active');
+		   }
+		});
+
+		$(window).scroll(function(){
+			if ( $('body').hasClass('offcanvas-visible') ) {
+		   	$('body').removeClass('offcanvas-visible');
+		   	$('.js-nav-toggle').removeClass('active');
+		   }
+		});
+
+	};
+
+
+	var testimonialFlexslider = function() {
+		var $flexslider = $('.flexslider');
+		$flexslider.flexslider({
+		  animation: "fade",
+		  manualControls: ".flex-control-nav li",
+		  directionNav: false,
+		  smoothHeight: true,
+		  useCSS: false /* Chrome fix*/
+		});
+	}
+
+
+	var goToTop = function() {
+
+		$('.js-gotop').on('click', function(event){
+			
+			event.preventDefault();
+
+			$('html, body').animate({
+				scrollTop: $('html').offset().top
+			}, 500);
+			
+			return false;
+		});
 	
-	var fetchPreviousEvents = function(){
-		$.ajax({
-				type: "GET",
-				url: "https://dotnetsheff-api.herokuapp.com/meetup/2/events",
-				crossDomain: true,
-				dataType: "jsonp",
-				data: {
-					group_id: dotnetsheff.constants.groupId,
-					status: 'past'
-					}
-			})
-			.done(function(response) {
-				var maxPreviousEvents = response.results.length - 4;
-				for(var i=response.results.length - 1; i>=maxPreviousEvents ; --i){
-					var result = response.results[i];
-					var event = new dotnetsheff.viewModels.EventSummaryViewModel(result.name, result.time, result.description, result.event_url);
+	};
+
+
+
+	// Animations
+
+	var contentWayPoint = function() {
+		var i = 0;
+		$('.animate-box').waypoint( function( direction ) {
+
+			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 				
-					self.previousEvents.push(event);
-				}
-		});;
+				i++;
+
+				$(this.element).addClass('item-animate');
+				setTimeout(function(){
+
+					$('body .animate-box.item-animate').each(function(k){
+						var el = $(this);
+						setTimeout( function () {
+							el.addClass('fadeInUp animated');
+							el.removeClass('item-animate');
+						},  k * 200, 'easeInOutExpo' );
+					});
+					
+				}, 100);
+				
+			}
+
+		} , { offset: '95%' } );
 	};
 	
-	(function(){
-		fetchNextEvents();
-		fetchPreviousEvents();
-	})();
-};
-
-(function(){
-	ko.applyBindings(new dotnetsheff.viewModels.HomeViewModel());
-})();
-
-
-// Map stuff...
-
-var mapcanvas = document.getElementById('map-canvas');
-if(mapcanvas){
-
-	  function initialize() {
-		var location = { lat: 53.3790182, lng: -1.4663497};
-		var mapOptions = {
-		zoom: 16,
-		center: location,
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		scrollwheel: false
-	};
 	
-	var map = new google.maps.Map(mapcanvas,
-		mapOptions);
-  
-   var contentString = 'dotnetsheff';
 
-	var infowindow = new google.maps.InfoWindow({
-		content: contentString
+	// Document on load.
+	$(function(){
+		gotToNextSection();
+		loaderPage();
+		fullHeight();
+		toggleBtnColor();
+		ScrollNext();
+		mobileMenuOutsideClick();
+		offcanvasMenu();
+		burgerMenu();
+		testimonialFlexslider();
+		goToTop();
+
+		// Animate
+		contentWayPoint();
+
 	});
 
-	var marker = new google.maps.Marker({
-		position: location,
-		map: map,
-		title: "dotnetsheff"
-	});
 
-	google.maps.event.addListener(marker, "click", function() {
-		infowindow.open(map, marker);
-	});
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-  }
+}());
