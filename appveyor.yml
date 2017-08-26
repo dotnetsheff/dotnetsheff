@@ -10,6 +10,6 @@ build_script:
   - bundler --version
   - bundle exec jekyll build
 
-  artifacts:
+artifacts:
   - path: _site
     name: dotnetsheff
