@@ -1,19 +1,15 @@
 version: "2.0.0-alpha{build}"
 
-build: off
-
 install:
   - SET PATH=C:\Ruby24-x64\bin;%PATH%
-  - bundle install --retry 5 --jobs=%NUMBER_OF_PROCESSORS% --clean --path vendor\bundle
+  - bundle install
 
 build_script:
-  - bundle exec jekyll build
-
-test_script:
   - ruby --version
   - gem --version
   - bundler --version
-  - bash ./script/cibuild
+  - bundle exec jekyll build
 
-cache:
-  - 'vendor\bundle -> appveyor.yml,Gemfile,jekyll.gemspec'
+  artifacts:
+  - path: _site
+    name: dotnetsheff
