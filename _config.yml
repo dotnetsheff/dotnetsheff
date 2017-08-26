@@ -13,5 +13,7 @@ social_links:
   github: dotnetsheff
   google: +dotnetsheffCoUk
 
+exclude: [README.md, Gemfile, appveyor.yml]
+
 # Build settings
 markdown: kramdown
