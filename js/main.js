@@ -196,11 +196,49 @@
 
 		} , { offset: '95%' } );
 	};
+
+	var dotnetsheff = {
+		constants: { apiUri: "https://dotnetsheff.azureedge.net/api/"},
+		viewModels: {}
+	};
 	
+	dotnetsheff.viewModels.EventSummaryViewModel = function(title, time, description, eventUrl) {
+		var self = this;
+		
+		self.title = ko.observable(title);
+		self.time = ko.observable(time);
+		self.description = ko.observable(description);
+		self.eventUrl = ko.observable(eventUrl);
+	};
 	
+	dotnetsheff.viewModels.HomeViewModel = function() {
+		var self = this;
+		self.nextEvent = ko.observable();
+		
+		self.isLoading = ko.computed(function() {
+			return self.nextEvent() === undefined;
+		}, self);
+			
+		var fetchNextEvents = function(){
+			$.ajax({
+					type: "GET",
+					url: dotnetsheff.constants.apiUri + "events/next"
+				})
+				.done(function(response) {
+					var nextEvent = new dotnetsheff.viewModels.EventSummaryViewModel(response.name, response.time, response.shortDescription, response.link);
+					
+					self.nextEvent(nextEvent);
+			});;
+		};
+		
+		(function(){
+			fetchNextEvents();
+		})();
+	};
 
 	// Document on load.
 	$(function(){
+		ko.applyBindings(new dotnetsheff.viewModels.HomeViewModel());
 		gotToNextSection();
 		loaderPage();
 		fullHeight();

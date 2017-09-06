@@ -6,13 +6,13 @@ layout: default
   <div class="overlay"></div>
   <div class="container">
     <div class="intro js-fullheight">
-      <div class="intro-text">
-        <div class="animate-box left-position">
-          <h2>Identity Crisis with Andrew Gunn and Thinking Functionally with John Stovin</h2>
-          <p>September's event will be split in to two parts, Andrew Gunn will present on Identity Crisis and then John Stovin will present on Thinking Functionally with .NET</p>
-          <p>Tue 05, Sep 2017 06:30pm</p>
+      <div class="intro-text" data-bind="with: nextEvent">
+        <div class="left-position">
+          <h2 data-bind="text: title"></h2>
+          <p data-bind="text: description"></p>
+          <p data-bind="text: moment(time()).format('ddd DD, MMM YYYY hh:mma')"></p>
           <p>
-            <a href="https://meetup.com/dotnetsheff" target="_blank" class="btn btn-primary">
+            <a data-bind="attr: { href: eventUrl }" target="_blank" class="btn btn-primary">
               <i class="icon-play2"></i> Join Us
             </a>
           </p>
@@ -134,7 +134,7 @@ layout: default
           <input class="btn btn-primary" type="submit" value="Join">
         </form>
         -->
-        <a href="http://slack.dotnetsheff.co.uk/invite" class="btn btn-primary btn-cta"><i class="icon-thumbs-up"></i> Join #Slack</a>
+        <a href="http://slack.dotnetsheff.co.uk/invite" target="_blank" class="btn btn-primary btn-cta"><i class="icon-thumbs-up"></i> Join #Slack</a>
       </div>
     </div>
   </div>
