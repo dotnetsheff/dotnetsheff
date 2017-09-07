@@ -589,11 +589,11 @@ body {
 	font-weight:300;
 }
 
-#features,
-#features-2,
+#the-group,
+#join-slack,
 #features-3,
 #features-4,
-#projects,
+#sponsors,
 #testimonials,
 #about,
 #subscribe,
@@ -608,7 +608,7 @@ body {
 	}
 }
 
-#projects {
+#sponsors {
 	background: #f9f9f9;
 	.lead {
 		font-size: 50px;
@@ -624,7 +624,7 @@ body {
 		line-height: 32px;
 		font-weight:300;
 	}
-	.project-item {
+	.sponsor-item {
 		display: block;
 		width: 100%;
 		position: relative;
@@ -689,7 +689,7 @@ body {
 		}
 	}
 }
-#features {
+#the-group {
 	.devices {
 		margin-bottom: 40px;
 		img {
@@ -743,7 +743,7 @@ body {
 	}
 }
 
-#features-2, #features-3, #features-4 {
+#join-slack, #features-3, #features-4 {
 	background: #f9f9f9;
 	overflow: hidden;
 	.label {
