@@ -1,0 +1,40 @@
+---
+layout: page
+title: Videos
+hero-title: Videos
+hero-description: Check out our previous events
+hero-image: videos.jpg
+learn-more-text: See the videos
+order: 2
+---
+
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<section id="videos">
+  <div class="container">
+      {% assign videos = site.data.videos | sort:"date" | reverse %}
+      {% for video in videos %}
+
+      {% capture thecycle %}{% cycle '1', '2', '3' %}{% endcapture %}
+
+      {% if thecycle == '1' %}
+      <div class="row">
+      {% endif %}
+
+      <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+        <span class="video-item">
+          <div class="wistia_embed wistia_async_{{video.wistia-id}} popover=true popoverAnimateThumbnail=true" style="height:256px;"></div>
+          <div class="text">
+            <h2>{{ video.title }}</h2>
+            <p>{{ video.speaker }} speaking in {{ video.date | date_to_long_string }}</p>
+          </div>
+        </span>
+      </div>
+
+      {% if thecycle == '3' %}
+      </div>
+      {% endif %}
+
+      {% endfor %}    
+
+  </div>
+</section>
