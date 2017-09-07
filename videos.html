@@ -24,8 +24,8 @@ order: 2
         <span class="video-item">
           <div class="wistia_embed wistia_async_{{video.wistia-id}} popover=true popoverAnimateThumbnail=true" style="height:256px;"></div>
           <div class="text">
-            <h2>{{ video.title }}</h2>
-            <p>{{ video.speaker }} speaking in {{ video.date | date_to_long_string }}</p>
+            <h2><a href="https://www.meetup.com/dotnetsheff/events/{{video.meetup-event-id}}" title="{{ video.title }}">{{ video.title }}</a></h2>
+            <p>{{ video.speaker }} speaking on {{ video.date | date_to_long_string }}</p>
           </div>
         </span>
       </div>
