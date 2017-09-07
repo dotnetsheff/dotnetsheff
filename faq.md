@@ -5,6 +5,7 @@ hero-title: Frequently Asked Questions
 hero-description: Questions and answers regarding dotnetsheff
 hero-image: questions.jpg
 learn-more-text: See questions and answers
+order: 1
 ---
 
 <div id="faqs">
