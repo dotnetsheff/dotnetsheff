@@ -1,6 +1,6 @@
 {% assign pages = site.pages | sort: 'order' %}
 {% for my_page in pages %}
-{% if my_page.title %}
+{% if my_page.title and my_page.order %}
 {% assign url = my_page.url | remove: 'index.html' %}
 <li>
   <a class="page-link" href="{{ url }}">{{ my_page.title }}</a>

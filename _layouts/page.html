@@ -14,12 +14,14 @@ layout: default
       </div>
     </div>
   </div>
+  {% if page.learn-more-text %}
   <div class="learn-more animate-box">
     <a href="#" class="scroll-btn">
       <span class="text">{{ page.learn-more-text }}</span>
       <span class="arrow"><i class="icon-chevron-down"></i></span>
     </a>
   </div>
+  {% endif %}
 </section>
 
 {{ content }}
