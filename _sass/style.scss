@@ -9,9 +9,6 @@ $brand-primary: #32a7d3 !default;
 $brand-secondary: #484c50 !default; 
 $brand-tertiary: #85919d !default; 
 
-
-
-
 $brand-white: #fff;
 $brand-black: #000;
 $brand-darker: #444;
@@ -464,7 +461,7 @@ body {
 			vertical-align: middle;
 			display: table-cell;
 			.left-position {
-				padding: 16px;
+				padding: 2.5rem;
 				width: 65%;
 				float: left;
 				background: rgba(0, 0, 0, 0.5);
@@ -496,7 +493,7 @@ body {
 			}
 			h2 {
 				font-size: 35px;
-				line-height: 64px;
+				line-height: 44px;
 				font-weight: bold;
 				color: rgba(255,255,255,1);
 				@media screen and (max-width: $screen-md) {
