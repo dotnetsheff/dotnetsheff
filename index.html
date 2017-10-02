@@ -1,0 +1,144 @@
+---
+layout: default
+title: Home
+order: 0
+---
+
+<section id="hero" class="js-fullheight" style="background-image: url(images/home-landing-page.jpg);" data-next="yes">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="intro js-fullheight">
+      <div class="intro-text" data-bind="with: nextEvent">
+        <div class="left-position">
+          <h2 data-bind="text: title"></h2>
+          <p data-bind="text: description"></p>
+          <p data-bind="text: moment(time()).format('ddd DD, MMM YYYY hh:mma')"></p>
+          <p>
+            <a data-bind="attr: { href: eventUrl }" target="_blank" class="btn btn-primary">
+              <i class="icon-play2"></i> Join Us
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="learn-more animate-box">
+    <a href="#" class="scroll-btn">
+      <span class="text">Explore more about us</span>
+      <span class="arrow"><i class="icon-chevron-down"></i></span>
+    </a>
+  </div>
+</section>
+
+<section id="the-group">
+  <div class="container">
+    <div class="row text-center row-bottom-padded-md">
+      <div class="col-md-8 col-md-offset-2">
+        <figure class="devices animate-box"><img src="images/the_user_group.png" alt="The User Group" class="img-responsive"></figure>
+        <h2 class="lead animate-box">The User Group</h2>
+        <p class="sub-lead animate-box">dotnetsheff is a monthly user group focused on software development, particularly in the .NET ecosystem. We welcome people with interests in software development of all ages and levels of experience. If you or someone you know is interested in speaking, please get in touch via Twitter (<a href="https://twitter.com/dotnetsheff">@dotnetsheff</a>) or email (organisers at dotnetsheff.co.uk).</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+        <div class="feature">
+          <div class="icon">
+            <i class="icon-smile"></i>
+          </div>
+          <h3>Open to everyone</h3>
+          <p>No matter if you are a student who wants to learn more or a senior developer wanting to share experiences, we welcome everyone along to the group to enjoy the event and network with like-minded technologists.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+        <div class="feature">
+          <div class="icon">
+            <i class="icon-money"></i>
+          </div>
+          <h3>Always free</h3>
+          <p>dotnetsheff is free and will always be free</p>
+        </div>
+      </div>					
+      <div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+        <div class="feature">
+          <div class="icon">
+            <i class="icon-food"></i>
+          </div>
+          <h3>Pizza and beer</h3>
+          <p>You will never go hungry: our sponsor provides us with free refreshments of pizza, beer and soft drinks thoughout the event.</p>
+        </div>
+      </div>
+      <div class="clearfix visible-sm-block"></div>
+
+    </div>
+  </div>
+</section>	
+
+<section id="sponsors">
+  <div class="container">
+    <div class="row row-bottom-padded-md">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h2 class="lead animate-box">Our Sponsors</h2>
+        <p class="sub-lead animate-box">Without our sponsors, dotnetsheff would not be able to achieve as much success as we do.</p>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+        <a href="http://www.modis.co.uk/" target="_blank" class="sponsor-item">
+          <img src="images/sponsors/modis.png" alt="Modis" class="img-responsive">
+          <div class="text">
+            <h2>Refreshments</h2>
+            <p>Modis organise and pay for refreshments for every event.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+        <a href="https://www.shu.ac.uk/" target="_blank" class="sponsor-item">
+          <img src="images/sponsors/sheffield_hallam_university.jpg" alt="Sheffield Hallam University" class="img-responsive">
+          <div class="text">
+            <h2>Venue</h2>
+            <p>Sheffield Hallam University provide venue arrangements to make it possible to host our events every month.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+        <a href="https://www.razor.co.uk/" target="_blank" class="sponsor-item">
+          <img src="images/sponsors/razor.png" alt="Razor" class="img-responsive">
+          <div class="text">
+            <h2>Meetup and Domain</h2>
+            <p>Razor provide funding for the meetup page and domain name registration.</p>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="join-slack">
+  <div class="container">
+    <div class="col-md-6 col-md-push-6">
+      <figure class="feature-image animate-box">
+        <img src="images/slack-chat.png" alt="Join our #Slack group!">
+      </figure>
+    </div>
+    <div class="col-md-6 col-md-pull-6">
+      <span class="animate-box">Join our #Slack community</span>
+      <h2 class="lead animate-box">#Slack</h2>
+      <p class="animate-box">Using slack allows you to meet with other like-minded developers and be updated on the latest events.</p>
+      
+      <div class="btn-action animate-box">
+        <!--
+        <form id="signup-form" method="post" action="https://dotnetsheff-slack.stamplayapp.com/" >
+          <input type="email" name="email" id="email" placeholder="Email Address">
+          <input class="btn btn-primary" type="submit" value="Join">
+        </form>
+        -->
+        <a href="http://slack.dotnetsheff.co.uk/invite" target="_blank" class="btn btn-primary btn-cta"><i class="icon-thumbs-up"></i> Join #Slack</a>
+      </div>
+    </div>
+  </div>
+</section>
+

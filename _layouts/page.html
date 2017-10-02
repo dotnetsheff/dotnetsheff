@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<section id="hero" class="no-js-fullheight" style="background-image: url({{ page.hero-image | prepend: "images/" | prepend: site.baseurl }});" data-next="yes">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="intro no-js-fullheight">
+      <div class="intro-text">
+        <div class="center-position">
+          <h2 class="animate-box">{{ page.hero-title }}</h2>
+          <h3 class="animate-box">{{ page.hero-description }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if page.learn-more-text %}
+  <div class="learn-more animate-box">
+    <a href="#" class="scroll-btn">
+      <span class="text">{{ page.learn-more-text }}</span>
+      <span class="arrow"><i class="icon-chevron-down"></i></span>
+    </a>
+  </div>
+  {% endif %}
+</section>
+
+{{ content }}

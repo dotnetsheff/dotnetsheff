@@ -1,0 +1,15 @@
+version: "2.0.0-alpha{build}"
+
+install:
+  - SET PATH=C:\Ruby24-x64\bin;%PATH%
+  - bundle install
+
+build_script:
+  - ruby --version
+  - gem --version
+  - bundler --version
+  - bundle exec jekyll build
+
+artifacts:
+  - path: _site
+    name: dotnetsheff
