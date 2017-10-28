@@ -1,17 +1,17 @@
 ;(function () {
-
+	
 	'use strict';
 
 
 
-	// iPad and iPod detection
+	// iPad and iPod detection	
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
 	var isiPhone = function(){
 	    return (
-			(navigator.platform.indexOf("iPhone") != -1) ||
+			(navigator.platform.indexOf("iPhone") != -1) || 
 			(navigator.platform.indexOf("iPod") != -1)
 	    );
 	};
@@ -29,10 +29,20 @@
 		$(".loader").fadeOut("slow");
 	};
 
+	// FullHeight
+	var fullHeight = function() {
+		if ( !isiPad() && !isiPhone() ) {
+			$('.js-fullheight').css('height', $(window).height() - 49);
+			$(window).resize(function(){
+				$('.js-fullheight').css('height', $(window).height() - 49);
+			})
+		}
+	};
+
 	var toggleBtnColor = function() {
 
-
-		if ( $('#hero').length > 0 ) {
+	
+		if ( $('#hero').length > 0 ) {	
 			$('#hero').waypoint( function( direction ) {
 				if( direction === 'down' ) {
 					$('.nav-toggle').addClass('dark');
@@ -43,7 +53,7 @@
 				if( direction === 'up' ) {
 					$('.nav-toggle').removeClass('dark');
 				}
-			} , {
+			} , { 
 				offset:  function() { return -$(this.element).height() + 0; }
 			} );
 		}
@@ -76,10 +86,10 @@
 
     			$('body').removeClass('offcanvas-visible');
     			$('.js-nav-toggle').removeClass('active');
-
+				
 	    	}
-
-
+	    
+	    	
 	    }
 		});
 
@@ -145,16 +155,16 @@
 	var goToTop = function() {
 
 		$('.js-gotop').on('click', function(event){
-
+			
 			event.preventDefault();
 
 			$('html, body').animate({
 				scrollTop: $('html').offset().top
 			}, 500);
-
+			
 			return false;
 		});
-
+	
 	};
 
 
@@ -166,7 +176,7 @@
 		$('.animate-box').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-
+				
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -179,9 +189,9 @@
 							el.removeClass('item-animate');
 						},  k * 200, 'easeInOutExpo' );
 					});
-
+					
 				}, 100);
-
+				
 			}
 
 		} , { offset: '95%' } );
@@ -191,24 +201,24 @@
 		constants: { apiUri: "https://dotnetsheff.azureedge.net/api/"},
 		viewModels: {}
 	};
-
+	
 	dotnetsheff.viewModels.EventSummaryViewModel = function(title, time, description, eventUrl) {
 		var self = this;
-
+		
 		self.title = ko.observable(title);
 		self.time = ko.observable(time);
 		self.description = ko.observable(description);
 		self.eventUrl = ko.observable(eventUrl);
 	};
-
+	
 	dotnetsheff.viewModels.HomeViewModel = function() {
 		var self = this;
 		self.nextEvent = ko.observable();
-
+		
 		self.isLoading = ko.computed(function() {
 			return self.nextEvent() === undefined;
 		}, self);
-
+			
 		var fetchNextEvents = function(){
 			$.ajax({
 					type: "GET",
@@ -216,11 +226,11 @@
 				})
 				.done(function(response) {
 					var nextEvent = new dotnetsheff.viewModels.EventSummaryViewModel(response.name, response.time, response.shortDescription, response.link);
-
+					
 					self.nextEvent(nextEvent);
 			});;
 		};
-
+		
 		(function(){
 			fetchNextEvents();
 		})();
