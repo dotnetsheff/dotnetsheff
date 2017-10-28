@@ -1,0 +1,35 @@
+<section id="sponsors">
+    <div class="container">
+        <div class="row row-bottom-padded-md">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h2 class="lead animate-box">Our Sponsors</h2>
+                <p class="sub-lead animate-box">Without our sponsors, dotnetsheff would not be able to achieve as much success as we do.</p>
+            </div>
+        </div>
+
+        {% for sponsor in site.data.sponsors %}
+  
+        {% capture thecycle %}{% cycle '1', '2', '3' %}{% endcapture %}
+  
+        {% if thecycle == '1' %}
+        <div class="row">
+        {% endif %}
+  
+        <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+            <a href="{{sponsor.website}}" target="_blank" class="sponsor-item">
+                <img src="images/sponsors/{{sponsor.image}}" alt="{{sponsor.name}}" class="img-responsive" />
+                <div class="text">
+                    <h2>{{sponsor.sponsors}}</h2>
+                    <p>{{sponsor.description}}</p>
+                </div>
+            </a>
+        </div>
+
+        {% if thecycle == '3' %}
+        </div>
+        {% endif %}
+  
+        {% endfor %}   
+
+    </div>
+</section>
