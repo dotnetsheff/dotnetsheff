@@ -214,7 +214,7 @@
 	dotnetsheff.viewModels.HomeViewModel = function() {
 		var self = this;
 		self.nextEvent = ko.observable();
-		
+		self.hasNextEvent = ko.observable();
 		self.isLoading = ko.computed(function() {
 			return self.nextEvent() === undefined;
 		}, self);
@@ -228,7 +228,11 @@
 					var nextEvent = new dotnetsheff.viewModels.EventSummaryViewModel(response.name, response.time, response.shortDescription, response.link);
 					
 					self.nextEvent(nextEvent);
-			});;
+					self.hasNextEvent(true);
+			})
+			.error(function(){
+				self.hasNextEvent(false);
+			});
 		};
 		
 		(function(){

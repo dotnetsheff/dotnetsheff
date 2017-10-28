@@ -8,8 +8,8 @@ order: 0
   <div class="overlay"></div>
   <div class="container">
     <div class="intro js-fullheight">
-      <div class="intro-text" data-bind="with: nextEvent">
-        <div class="left-position">
+      <div class="intro-text" data-bind="if: hasNextEvent">
+        <div data-bind="with: nextEvent" class="left-position">
           <h2 data-bind="text: title"></h2>
           <p data-bind="text: description"></p>
           <p data-bind="text: moment(time()).format('ddd DD, MMM YYYY hh:mma')"></p>
@@ -20,6 +20,17 @@ order: 0
           </p>
         </div>
       </div>
+      <div class="intro-text" data-bind="if: !hasNextEvent()">
+          <div class="left-position">
+            <h2>Join us at our next event</h2>
+            <p>We regularly hold an event each month, typically on the first tuesday.</p>
+            <p>
+              <a href="https://www.meetup.com/dotnetsheff" target="_blank" class="btn btn-primary">
+                <i class="icon-play2"></i> Join Us
+              </a>
+            </p>
+          </div>
+        </div>
     </div>
   </div>
   <div class="learn-more animate-box">
