@@ -15,3 +15,15 @@
   description: Jetbrains provide free giveaway licenses.
   image: jetbrains.jpg
   website: https://www.jetbrains.com/
+
+- name: .NET Foundation
+  sponsors: Supporting the community
+  description: The .NET Foundation is an independent organization to foster open development and collaboration around the .NET ecosystem.
+  image: dot-net-foundation-logo.png
+  website: https://dotnetfoundation.org/
+  
+- name: PostSharp
+  sponsors: Free licenses and Starbucks cards
+  description: PostSharp provide free giveaway licenses and Starbucks cards
+  image: postsharp.png
+  website: https://www.postsharp.net/
