@@ -1,3 +1,9 @@
+- name: BigChange Apps
+  sponsors: Food and Refreshments
+  description: BigChange provide funding for the food and refreshments.
+  image: bigchange-apps.png
+  website: https://www.bigchangeapps.com/
+
 - name: Sheffield Hallam University
   sponsors: Venue
   description: Sheffield Hallam University provide venue arrangements to make it possible to host our events every month.
