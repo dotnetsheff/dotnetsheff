@@ -16,6 +16,12 @@
   image: razor.png
   website: https://www.razor.co.uk/
 
+- name: Pusher
+  sponsors: Videoing
+  description: Pusher support us to video, edit and publish our videos online.
+  image: pusher.png
+  website: https://pusher.com/
+
 - name: Jetbrains
   sponsors: Free giveaway licenses
   description: Jetbrains provide free giveaway licenses.
