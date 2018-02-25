@@ -1,41 +1,49 @@
+- name: Raygun
+  type: Gold Sponsor
+  description: Raygun gives continuous support for events.
+  image: raygun.png
+  website: https://raygun.com/
+
 - name: BigChange Apps
-  sponsors: Food and Refreshments
-  description: BigChange provide funding for the food and refreshments.
+  type: Bronze Sponsor
+  description: BigChange ad hocly supports events.
   image: bigchange-apps.png
   website: https://www.bigchangeapps.com/
 
+- name: Razor
+  type: Bronze Sponsor
+  description: Razor ad hocly supports events.
+  image: razor.png
+  website: https://www.razor.co.uk/
+
+
 - name: Sheffield Hallam University
-  sponsors: Venue
+  type: Venue Sponsor
   description: Sheffield Hallam University provide venue arrangements to make it possible to host our events every month.
   image: sheffield_hallam_university.jpg
   website: https://www.shu.ac.uk/
 
-- name: Razor
-  sponsors: Meetup and Domain
-  description: Razor provide funding for the meetup page and domain name registration.
-  image: razor.png
-  website: https://www.razor.co.uk/
 
 - name: Pusher
-  sponsors: Videoing
+  type: Video Sponsor
   description: Pusher support us to video, edit and publish our videos online.
   image: pusher.png
   website: https://pusher.com/
 
-- name: Jetbrains
-  sponsors: Free giveaway licenses
-  description: Jetbrains provide free giveaway licenses.
-  image: jetbrains.jpg
-  website: https://www.jetbrains.com/
-
 - name: .NET Foundation
-  sponsors: Supporting the community
+  type: Supporting the community
   description: The .NET Foundation is an independent organization to foster open development and collaboration around the .NET ecosystem.
   image: dot-net-foundation-logo.png
   website: https://dotnetfoundation.org/
+
+- name: Jetbrains
+  type: Prize Sponsor
+  description: Jetbrains provide free giveaway licenses.
+  image: jetbrains.jpg
+  website: https://www.jetbrains.com/
   
 - name: PostSharp
-  sponsors: Free licenses and Starbucks cards
+  type: Prize Sponsor
   description: PostSharp provide free giveaway licenses and Starbucks cards
   image: postsharp.png
   website: https://www.postsharp.net/
