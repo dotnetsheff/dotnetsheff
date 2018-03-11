@@ -3,7 +3,13 @@
   description: Raygun gives continuous support for events.
   image: raygun.png
   website: https://raygun.com/
-
+  
+- name: CherSoft
+  type: Bronze Sponsor
+  description: CherSoft ad hocly supports events.
+  image: chersoft.png
+  website: https://chersoft.com/
+  
 - name: BigChange Apps
   type: Bronze Sponsor
   description: BigChange ad hocly supports events.
