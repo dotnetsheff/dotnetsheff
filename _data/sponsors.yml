@@ -22,6 +22,11 @@
   image: razor.png
   website: https://www.razor.co.uk/
 
+- name: Redgate
+  type: Bronze Sponsor
+  description: Redgate ad hocly supports events.
+  image: redgate.png
+  website: https://www.red-gate.com/
 
 - name: Sheffield Hallam University
   type: Venue Sponsor
