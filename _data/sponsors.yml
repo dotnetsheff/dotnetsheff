@@ -4,6 +4,12 @@
   image: raygun.png
   website: https://raygun.com/
   
+- name: endjin
+  type: Bronze Sponsor
+  description: endjin ad hocly supports events.
+  image: endjin.png
+  website: https://endjin.com/
+  
 - name: CherSoft
   type: Bronze Sponsor
   description: CherSoft ad hocly supports events.
