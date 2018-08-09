@@ -1,4 +1,4 @@
-version: "2.2.2"
+version: "2.3.0"
 
 install:
   - SET PATH=C:\Ruby24-x64\bin;%PATH%
