@@ -63,3 +63,123 @@
   date: 2017-09-05
   wistia-id: ubwutclg1j
   meetup-event-id: 238948950
+
+- title: Building APIs with Azure Functions
+  speaker: Kevin Smith
+  date: 2017-10-03
+  youtube-id: pDkhX2dq5bc 
+  meetup-event-id: 239217247
+
+- title: Internationalisation and Localisation in .NET
+  speaker: Shane Bluemel
+  date: 2017-10-03
+  youtube-id: dYozCoG1stI 
+  meetup-event-id: 239217247 
+
+- title: Predicting House Prices
+  speaker: Elliot Chaim
+  date: 2017-11-07
+  youtube-id: QRP_lZByeD0 
+  meetup-event-id: 239786720
+
+- title: Cake (C# Make)
+  speaker: Gary Ewan Park
+  date: 2018-02-08
+  youtube-id: bOQLC2HXCzE 
+  meetup-event-id: 244481731 
+
+- title: Security Headers and Cookies 
+  speaker: Robin Wood 
+  date: 2018-02-08
+  youtube-id: 2nvBGoyF7nQ 
+  meetup-event-id: 244481731 
+
+- title: Chat Bots
+  speaker: Adam Gask
+  date: 2018-03-06
+  youtube-id: 9zvKVH755bk
+  meetup-event-id: 240093894
+
+- title: Paket
+  speaker: John Stovin
+  date: 2018-03-06
+  youtube-id: etHqLtkl2Ss
+  meetup-event-id: 240093894
+
+- title: Azure Data Factory
+  speaker: Elliot Chaim
+  date: 2018-03-06
+  youtube-id: 0M8gP87M3J0 
+  meetup-event-id: 240093894
+
+- title: ElasticSearch
+  speaker: Chris Perks
+  date: 2018-03-06
+  youtube-id: 2dElIdajLuQ 
+  meetup-event-id: 240093894
+
+- title: Messaging with MassTransit
+  speaker: Kevin Smith
+  date: 2018-03-06
+  youtube-id: risAHFaHUtU
+  meetup-event-id: 240093894
+
+- title: Lessons from Infosec Incidents
+  speaker: Robin Minto
+  date: 2018-04-03
+  youtube-id: 1fwqMGBWPvs 
+  meetup-event-id: 240767271
+
+- title: Building a Private Cloud on a Shoe String using OVH
+  speaker: Mark Thompson
+  date: 2018-04-03
+  youtube-id: TyKqJmMjSnc 
+  meetup-event-id: 240767271
+
+- title: Messaging - RabbitMQ, Azure (Service Bus), Docker and Azure Functions
+  speaker: John Staveley
+  date: 2018-05-01
+  youtube-id: zfmjJw3zDZQ
+  meetup-event-id: 242189477
+
+- title: SharpCompress - Pure C# Archival and Compression
+  speaker: Adam Hathcock
+  date: 2018-06-05
+  youtube-id: 7L7Urys3DmQ
+  meetup-event-id: 242189390
+
+- title: Life, Liberty and the Pursuit of APIness
+  speaker: Dylan Beattie
+  date: 2018-06-05
+  youtube-id: oQE8pmxTv5c 
+  meetup-event-id: 242189390
+
+- title: Captain's Log
+  speaker: Andrew Gunn
+  date: 2018-07-03
+  youtube-id: rWWizJf4XoE
+  meetup-event-id: 245135202
+
+- title: Dapper - A Simple Object Mapper for .NET
+  speaker: Michael Steele
+  date: 2018-07-03
+  youtube-id: 4Wmjo2zXt_M
+  meetup-event-id: 245135202
+
+- title: The Nuances of Unity 3D for C# Developers
+  speaker: Jonathan Eyre
+  date: 2018-07-03
+  youtube-id: D2NmYrXDgyQ
+  meetup-event-id: 245135202
+
+- title: Error Monitoring with Raygun
+  speaker: Kevin Smith
+  date: 2018-07-03
+  youtube-id: aZKJLqx7LCc
+  meetup-event-id: 245135202
+
+- title: Turning Software Into Computer Chips - Hastlayer
+  speaker: Zoltán Lehóczky
+  date: 2018-07-03
+  youtube-id: 1Qs9_ZKupIY
+  meetup-event-id: 245135202
