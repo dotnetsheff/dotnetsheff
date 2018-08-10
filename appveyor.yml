@@ -11,6 +11,9 @@ build_script:
 artifacts:
   - path: _site
     name: dotnetsheff
+    
+for:
+
 -
   branches:
     only:
