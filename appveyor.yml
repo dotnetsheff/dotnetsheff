@@ -19,7 +19,7 @@ for:
     only:
       - master
 
-  version: 2.3.2
+  version: 2.3.3
 
   deploy:
     - provider: Environment
