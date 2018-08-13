@@ -1,3 +1,6 @@
+pull_requests:
+  do_not_increment_build_number: true
+
 install:
   - SET PATH=C:\Ruby24-x64\bin;%PATH%
   - bundle install
