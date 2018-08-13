@@ -7,28 +7,26 @@
             </div>
         </div>
 
-        {% for sponsor in site.data.sponsors %}
-  
-        {% capture thecycle %}{% cycle '1', '2', '3' %}{% endcapture %}
-  
-        {% if thecycle == '1' %}
-        <div class="row">
-        {% endif %}
-  
-        <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
-            <a href="{{sponsor.website}}" target="_blank" class="sponsor-item">
-                <img src="images/sponsors/{{sponsor.image}}" alt="{{sponsor.name}}" class="img-responsive center-block" />
-                <div class="text">
-                    <h2>{{sponsor.name}} - {{sponsor.type}}</h2>
-                    <p>{{sponsor.description}}</p>
-                </div>
-            </a>
-        </div>
+        {% assign sponsors_by_type = site.data.sponsors | group_by:"type" %}
 
-        {% if thecycle == '3' %}
-        </div>
-        {% endif %}
-  
+        {% for sponsor_type in sponsors_by_type %}
+            <div class='panel panel-default'>
+            <div class='panel-heading'>{{sponsor_type.name}}</div>
+            <div class='panel-body'>
+
+            {% for sponsor in sponsor_type.items %}
+                <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+                    <a href="{{sponsor.website}}" target="_blank" class="sponsor-item">
+                        <img src="images/sponsors/{{sponsor.image}}" alt="{{sponsor.name}}" class="img-responsive center-block" />
+                        <div class="text">
+                            <h2>{{sponsor.name}} - {{sponsor.type}}</h2>
+                            <p>{{sponsor.description}}</p>
+                        </div>
+                    </a>
+                </div>
+           {% endfor %}   
+
+            </div></div>
         {% endfor %}   
 
     </div>
