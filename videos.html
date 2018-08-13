@@ -10,6 +10,7 @@ permalink: /pages/videos/
 ---
 
 <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
 <section id="videos">
   <div class="container">
       {% assign videos = site.data.videos | sort:"date" | reverse %}
@@ -24,7 +25,7 @@ permalink: /pages/videos/
       <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
         <span class="video-item">
           {% if video.youtube-id %}
-          <iframe width="400" height="256" src="https://www.youtube.com/embed/{{ video.youtube-id }}"></iframe>
+            <a class="popup-youtube" href="https://www.youtube.com/watch?v={{ video.youtube-id }}"><img src="https://i.ytimg.com/vi/{{ video.youtube-id }}/hqdefault.jpg" /></a>
           {% endif %}
           {%if video.wistia-id %}
           <div class="wistia_embed wistia_async_{{video.wistia-id}} popover=true popoverAnimateThumbnail=true" style="height:256px;"></div>
