@@ -598,6 +598,7 @@ body {
 #info,
 #pricing,
 #faqs,
+#feedback,
 #footer {
 	background-color: $brand-white;
 	padding: 7em 0;
@@ -605,6 +606,7 @@ body {
 		padding: 3em 0;
 	}
 }
+
 
 #sponsors {
 	background: #f9f9f9;
@@ -1225,6 +1227,8 @@ body {
 	}
 }
 
+
+
 .social {
 	padding: 0;
 	margin: 0;
@@ -1274,6 +1278,9 @@ body {
 
 }
 
+#feedback {
+	background: #f9f9f9;
+}
 // Offcanvas Menu
 #offcanvas, .nav-toggle, #page {
 	@include transition(.5s);
