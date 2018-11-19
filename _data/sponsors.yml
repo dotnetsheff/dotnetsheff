@@ -3,49 +3,88 @@
   description: Raygun gives continuous support for events.
   image: raygun.png
   website: https://raygun.com/
-  
+  agreements:
+    - "2018-01"
+    - "2018-02"
+    - "2018-03"
+    - "2018-04"
+    - "2018-05"
+    - "2018-06"
+    - "2018-07"
+    - "2018-08"
+    - "2018-09"
+    - "2018-10"
+    - "2018-11"
+    - "2018-12"
+    - "2019-01"
+    - "2019-02"
+
 - name: endjin
   type: Bronze Sponsor
   description: endjin ad hocly supports events.
   image: endjin.png
   website: https://endjin.com/
+  agreements:
+    - "2018-06"
+    - "2018-07"
+    - "2018-08"
 
 - name: 3Squared
   type: Bronze Sponsor
   description: 3Squared ad hocly supports events.
   image: 3squared.png
   website: https://www.3squared.com/
+  agreements:
+    - "2018-06"
+    - "2018-07"
+    - "2018-08"
+    - "2018-09"
+    - "2018-10"
+    - "2018-11"
 
 - name: CherSoft
   type: Bronze Sponsor
   description: CherSoft ad hocly supports events.
   image: chersoft.png
   website: https://chersoft.com/
+  agreements:
+    - "2018-03"
+    - "2018-04"
+    - "2018-05"
   
 - name: BigChange Apps
   type: Bronze Sponsor
   description: BigChange ad hocly supports events.
   image: bigchange-apps.png
   website: https://www.bigchangeapps.com/
+  agreements:
+    - "2017-11"
+    - "2018-01"
 
 - name: Razor
   type: Bronze Sponsor
   description: Razor ad hocly supports events.
   image: razor.png
   website: https://www.razor.co.uk/
+  agreements:
+    - "2018-02"
 
 - name: Redgate
   type: Bronze Sponsor
   description: Redgate ad hocly supports events.
   image: redgate.png
   website: https://www.red-gate.com/
+  agreements:
+    - "2018-04"
+    - "2018-07"
+    - "2018-10"
+    - "2019-01"
 
 - name: Sheffield Hallam University
   type: Venue Sponsor
   description: Sheffield Hallam University provide venue arrangements to make it possible to host our events every month.
   image: sheffield_hallam_university.jpg
   website: https://www.shu.ac.uk/
-
 
 - name: Pusher
   type: Video Sponsor
@@ -70,3 +109,4 @@
   description: PostSharp provide free giveaway licenses and Starbucks cards
   image: postsharp.png
   website: https://www.postsharp.net/
+

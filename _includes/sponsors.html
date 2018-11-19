@@ -7,7 +7,16 @@
             </div>
         </div>
 
+        {% assign year_month = site.time | date: "%Y-%m" %}
+        {% assign current_sponsors = site.data.sponsors | where: "agreements", year_month %}
+        
         {% for sponsor in site.data.sponsors %}
+            {% unless sponsor.agreements %}
+                {% assign current_sponsors = current_sponsors | push: sponsor %}
+            {% endunless %}
+        {% endfor %} 
+        
+        {% for sponsor in current_sponsors %}
   
         {% capture thecycle %}{% cycle '1', '2', '3' %}{% endcapture %}
   
