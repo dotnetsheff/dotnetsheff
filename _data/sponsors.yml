@@ -35,9 +35,12 @@
   image: 3squared.png
   website: https://www.3squared.com/
   agreements:
-    - "2018-03"
-    - "2018-04"
-    - "2018-05"
+    - "2018-06"
+    - "2018-07"
+    - "2018-08"
+    - "2018-09"
+    - "2018-10"
+    - "2018-11"
 
 - name: CherSoft
   type: Bronze Sponsor
@@ -106,3 +109,4 @@
   description: PostSharp provide free giveaway licenses and Starbucks cards
   image: postsharp.png
   website: https://www.postsharp.net/
+
