@@ -11,20 +11,42 @@ permalink: /pages/feedback/
 
 <div id="feedback">
    <div class="container">
+        
         <form>
-            <div class="form-group">
-                <label for="email">Email: </label>
-                <input class="form-control" type="email" id="email" placeholder="Your Email">
+            <div class="selection-container">
+                <label>Event:</label>
+                <select name="Event">
+                    <option value="1">December lightning talks</option>
+                    <option value="2">January lightning talks</option>
+                    <option value="3">February lightning talks</option>
+                    <option value="4">March lightning talks</option>
+                </select>
+            </div>
+            <div class="rating-container">
+                <label for="overall">Overall: </label>
+                <div>{% include star-rating.html rating-for="Overall" %}</div>
+            </div>
+            <div class="rating-container">
+                <label for="overall">Food: </label>
+                <div>{% include star-rating.html rating-for="Food" %}</div>
+            </div>
+            <div class="rating-container">
+                <label for="overall">Drinks: </label>
+                <div>{% include star-rating.html rating-for="Drinks" %}</div>
+            </div>
+            <div class="rating-container">
+                <label for="overall">Venue: </label>
+                <div>{% include star-rating.html rating-for="Venue" %}</div>
             </div>
             <div class="form-group">
-                <label for="name">Name: </label>
-                <input class="form-control" type="text" id="name" placeholder="Your Name">
+                <label for="enjoy-about-event">What did you enjoy about the event?</label>
+                <textarea class="form-control" rows="2" id="enjoy-about-event" name="enjoy-about-event"></textarea>
             </div>
             <div class="form-group">
-                <label for="message">Message: </label>
-                <textarea class="form-control" id="message"></textarea> 
+                <label for="impovements-about-event">Any improvements to suggest?</label>
+                <textarea class="form-control" rows="2" id="improvements-about-event" name="improvements-about-event"></textarea>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+           <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div> 
 </div>
