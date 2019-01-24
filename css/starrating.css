@@ -4,7 +4,7 @@
   justify-content: space-between;
   width: 20%;
 }
-/****** Style Star Rating Widget *****/
+
 .rating { 
   border: none;
   float: left;
@@ -28,8 +28,6 @@
   color: #ddd; 
  float: right; 
 }
-
-/***** CSS Magic to Highlight Stars on Hover *****/
 
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
