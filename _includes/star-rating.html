@@ -1,8 +1,8 @@
 <fieldset class="rating">
     {% for rating in (1..5) reversed %}
-        <input type="radio" id="{{include.rating-for}}-{{rating}}" name="{{include.rating-for}}-rating" value="{{rating}}" />
+        <input type="radio" id="{{include.rating-for}}-{{rating}}" value="{{rating}}" />
         <label class="full" for="{{include.rating-for}}-{{rating}}" title="{{rating}}"></label>
-        <input type="radio" id="{{include.rating-for}}-{{rating}}-half" name="{{include.rating-for}}-rating" value="{{rating-0.5}}" />
+        <input type="radio" id="{{include.rating-for}}-{{rating}}-half" value="{{rating-0.5}}" />
         <label class="half" for="{{include.rating-for}}-{{rating}}-half" title="{{rating-0.5}}"></label>
     {% endfor %}
  </fieldset>

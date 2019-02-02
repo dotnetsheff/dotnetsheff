@@ -11,18 +11,15 @@ permalink: /pages/feedback/
 
 <div id="feedback">
    <div class="container">
-        
         <form>
             <div class="selection-container">
                 <label>Event:</label>
-                <select name="Event">
-                    <option value="1">December lightning talks</option>
-                    <option value="2">January lightning talks</option>
-                    <option value="3">February lightning talks</option>
-                    <option value="4">March lightning talks</option>
+                <select data-bind="options: events,
+                    optionsText: function(event){return event.title},
+                    value: selectedTalk">
                 </select>
             </div>
-            <div class="rating-container">
+           <div class="rating-container">
                 <label for="overall">Overall: </label>
                 <div>{% include star-rating.html rating-for="Overall" %}</div>
             </div>
@@ -46,7 +43,8 @@ permalink: /pages/feedback/
                 <label for="impovements-about-event">Any improvements to suggest?</label>
                 <textarea class="form-control" rows="2" id="improvements-about-event" name="improvements-about-event"></textarea>
             </div>
-           <button type="submit" class="btn btn-default">Submit</button>
+            {% include feedback-talks.html %}
+            <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div> 
 </div>
