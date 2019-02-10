@@ -4,11 +4,16 @@
 	{% else %}
 		{% assign title = site.title | escape %}
 	{% endif %}
+	{% if page.hero-description %}
+		{% assign description = page.hero-description | strip_html | strip_newlines | truncate: 160 %}
+	{% else %}
+		{% assign description = site.description %}
+	{% endif %}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">  
+  <meta name="description" content="{{ description }}">  
 	<meta name="keywords" content="programming, software engineering, azure, windows, development, .net, sheffield, user group" />
 	<meta name="author" content="Kevin Smith" />
 
@@ -16,13 +21,13 @@
 	<meta property="og:image" content="{{ "images/logo.jpg" | prepend: site.baseurl }}"/>
 	<meta property="og:url" content="{{ site.baseurl }}/"/>
 	<meta property="og:site_name" content="{{% site.title %}}"/>
-	<meta property="og:description" content="{{ site.description }}"/>
+	<meta property="og:description" content="{{ description }}"/>
 	<meta name="twitter:title" content="{{ title }}" />
+	<meta name="twitter:description" content="{{ description }}" />
 	<meta name="twitter:image" content="{{ "images/logo.jpg" | prepend: site.baseurl }}" />
 	<meta name="twitter:url" content="{{ site.baseurl }}/" />
 	<meta name="twitter:card" content="summary" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet" type="text/css">
