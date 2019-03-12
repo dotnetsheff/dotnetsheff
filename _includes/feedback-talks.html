@@ -1,8 +1,8 @@
 <div data-bind="with: selectedTalk">
-    <h3 data-bind="text: title"></h3>
-    <div data-bind="foreach: talks">
+    <h3>Talks:</h3>
+    <div data-bind="foreach: Talks">
         <div class="form-group">
-            <span data-bind="text: title"></span> - <span data-bind="text: speaker"></span>
+            <span data-bind="text: Title"></span> - <span data-bind="text: Speaker"></span>
             <div class="rating-container">
                 <label for="talk">Overall: </label>
                 <fieldset class="rating">
