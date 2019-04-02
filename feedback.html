@@ -11,12 +11,12 @@ permalink: /pages/feedback/
 
 <div id="feedback">
    <div class="container">
-        <form>
+        <form data-bind="submit: sendFeedback">
             <div class="selection-container">
                 <label>Event:</label>
                 <select data-bind="options: events,
                     optionsText: function(event){return event.Title},
-                    value: selectedTalk">
+                    value: selectedEvent">
                 </select>
             </div>
            <div class="rating-container">
@@ -37,11 +37,11 @@ permalink: /pages/feedback/
             </div>
             <div class="form-group">
                 <label for="enjoy-about-event">What did you enjoy about the event?</label>
-                <textarea class="form-control" rows="2" id="enjoy-about-event" name="enjoy-about-event"></textarea>
+                <textarea class="form-control" rows="2" id="enjoy-about-event" name="enjoy-about-event" data-bind="value: enjoyAboutEvent"></textarea>
             </div>
             <div class="form-group">
                 <label for="impovements-about-event">Any improvements to suggest?</label>
-                <textarea class="form-control" rows="2" id="improvements-about-event" name="improvements-about-event"></textarea>
+                <textarea class="form-control" rows="2" id="improvements-about-event" name="improvements-about-event" data-bind="value: improvementsAboutEvent"></textarea>
             </div>
             {% include feedback-talks.html %}
             <button type="submit" class="btn btn-default">Submit</button>

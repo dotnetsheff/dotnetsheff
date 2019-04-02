@@ -1,4 +1,4 @@
-<div data-bind="with: selectedTalk">
+<div data-bind="with: selectedEvent">
     <h3>Talks:</h3>
     <div data-bind="foreach: Talks">
         <div class="form-group">
@@ -6,35 +6,35 @@
             <div class="rating-container">
                 <label for="talk">Overall: </label>
                 <fieldset class="rating">
-                    <input type="radio" data-bind="attr: {id: $data.title + '-5-' + $index()}" value="5" />
-                    <label class="full" data-bind="attr: {for: $data.title + '-5-' + $index()}" title="5"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-4.5-' + $index()}" value="4.5" />
-                    <label class="half" data-bind="attr: {for: $data.title + '-4.5-' + $index()}" title="4.5"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-4-' + $index()}" value="4" />
-                    <label class="full" data-bind="attr: {for: $data.title + '-4-' + $index()}" title="4"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-3.5-' + $index()}" value="3.5" />
-                    <label class="half" data-bind="attr: {for: $data.title + '-3.5-' + $index()}" title="3.5"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-3-' + $index()}" value="3" />
-                    <label class="full" data-bind="attr: {for: $data.title + '-3-' + $index()}" title="3"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-2.5-' + $index()}" value="2.5" />
-                    <label class="half" data-bind="attr: {for: $data.title + '-2.5-' + $index()}" title="2.5"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-2-' + $index()}" value="2" />
-                    <label class="full" data-bind="attr: {for: $data.title + '-2-' + $index()}" title="2"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-1.5-' + $index()}" value="1.5" />
-                    <label class="half" data-bind="attr: {for: $data.title + '-1.5-' + $index()}" title="1.5"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-1-' + $index()}" value="1" />
-                    <label class="full" data-bind="attr: {for: $data.title + '-1-' + $index()}" title="1"></label>
-                    <input type="radio" data-bind="attr: {id: $data.title + '-0.5-' + $index()}" value="0.5" />
-                    <label class="half" data-bind="attr: {for: $data.title + '-0.5-' + $index()}" title="0.5"></label>
+                    <input type="radio" data-bind="attr: {id: '5-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="5" />
+                    <label class="full" data-bind="attr: {for: '5-' + $index()}" title="5"></label>
+                    <input type="radio" data-bind="attr: {id: '4-5-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="4.5" />
+                    <label class="half" data-bind="attr: {for: '4-5-' + $index()}" title="4.5"></label>
+                    <input type="radio" data-bind="attr: {id: '4-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="4" />
+                    <label class="full" data-bind="attr: {for: '4-' + $index()}" title="4"></label>
+                    <input type="radio" data-bind="attr: {id: '3-5-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="3.5" />
+                    <label class="half" data-bind="attr: {for: '3-5-' + $index()}" title="3.5"></label>
+                    <input type="radio" data-bind="attr: {id: '3-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="3" />
+                    <label class="full" data-bind="attr: {for: '3-' + $index()}" title="3"></label>
+                    <input type="radio" data-bind="attr: {id: '2-5-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="2.5" />
+                    <label class="half" data-bind="attr: {for: '2-5-' + $index()}" title="2.5"></label>
+                    <input type="radio" data-bind="attr: {id: '2-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="2" />
+                    <label class="full" data-bind="attr: {for: '2-' + $index()}" title="2"></label>
+                    <input type="radio" data-bind="attr: {id: '1-5-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="1.5" />
+                    <label class="half" data-bind="attr: {for: '1-5-' + $index()}" title="1.5"></label>
+                    <input type="radio" data-bind="attr: {id: '1-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="1" />
+                    <label class="full" data-bind="attr: {for: '1-' + $index()}" title="1"></label>
+                    <input type="radio" data-bind="attr: {id: '0-5-' + $index(), name: 'talk' + $index()}, checked: 'talk' + $index()" value="0.5" />
+                    <label class="half" data-bind="attr: {for: '0-5-' + $index()}" title="0.5"></label>
                 </fieldset>
             </div>
             <div class="form-group">
                 <label for="enjoy-about-talk">What did you enjoy about the talk?</label>
-                <textarea class="form-control" rows="2" id="enjoy-about-talk" name="enjoy-about-talk"></textarea>
+                <textarea class="form-control" rows="2" id="enjoy-about-talk" name="enjoy-about-talk" ></textarea>
             </div>
             <div class="form-group">
                 <label for="improvements-about-talk">What would improve the talk?</label>
-                <textarea class="form-control" rows="2" id="improvements-about-talk" name="improvements-about-talk"></textarea>
+                <textarea class="form-control" rows="2" id="improvements-about-talk" name="improvements-about-talk" ></textarea>
             </div>
         </div>
     </div>
