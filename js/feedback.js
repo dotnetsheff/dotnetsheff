@@ -10,24 +10,24 @@
         viewModels: {}
     };
 
-    dotnetsheff.viewModels.FeedbackTalkViewModel = function(eventId, title, speaker){
-        this.eventId = eventId;
+    dotnetsheff.viewModels.FeedbackTalkViewModel = function(talkId, title, speaker){
+        this.talkId = talkId;
         this.title = title;
         this.speaker = speaker;
-        this.overallRating = ko.observable();
+        this.rating = ko.observable();
         this.enjoyAboutTalk = ko.observable();
         this.improvementsAboutTalk = ko.observable();
     };
 
-    dotnetsheff.viewModels.FeedbackEventViewModel = function(){
-        this.id = ko.observable();
-        this.title = ko.observable();
-        this.talks = ko.observableArray([]);
-        this.overalRating = ko.observable();
+    dotnetsheff.viewModels.FeedbackEventViewModel = function(id, title, talks){
+        this.id = ko.observable(id);
+        this.title = ko.observable(title);
+        this.talks = ko.observableArray(talks);
         this.Overall = ko.observable();
         this.Food = ko.observable();
         this.Drinks = ko.observable();
         this.Venue = ko.observable();
+        this.enjoyAboutEvent = ko.observable();
         this.improvementsAboutEvent = ko.observable();
     }
 
@@ -35,38 +35,41 @@
         var self = this;
 
         self.events = ko.observableArray();
-        self.events.Talks = ko.observableArray();
         self.selectedEvent = ko.observable();
-        self.enjoyAboutEvent = ko.observable();
-        self.Overall = ko.observable();
-        self.Food = ko.observable();
-        self.Drinks = ko.observable();
-        self.Venue = ko.observable();
-        self.improvementsAboutEvent = ko.observable();
-        self.enjoyAboutTalk = ko.observable();
-        self.improvementsAboutTalk = ko.observable();
 
         var fetchFeedbackEvents = function(){
             $.getJSON(dotnetsheff.constants.apiUri + "/feedback/available-events", 
             function(data){
-                self.events(data);
+                var events = data.map(event => {
+                    var talks = event.Talks.map((talk,index) => new dotnetsheff.viewModels.FeedbackTalkViewModel(`${event.Id}-${index}`, talk.Title, talk.Speaker));
+                    return new dotnetsheff.viewModels.FeedbackEventViewModel(event.Id, event.Title, talks)
+                });
+
+                self.events(events);
             });
         };
         
-        self.sendFeedback = function(formElement)
+        self.sendFeedback = function()
         {
-            var viewModel = {};
-            viewModel.enjoyAboutEvent = self.enjoyAboutEvent();
-            viewModel.Overall = self.Overall();
-            viewModel.Food = self.Food();
-            viewModel.Drinks = self.Drinks();
-            viewModel.Venue = self.Venue();
-            viewModel.improvementsAboutEvent = self.improvementsAboutEvent();
-            viewModel.selectedEvent = self.selectedEvent();
-            viewModel.enjoyAboutTalk = self.enjoyAboutTalk();
-            viewModel.improvementsAboutTalk = self.improvementsAboutTalk();
+             var request = {
+                id: self.selectedEvent().id(),
+                enjoyAboutEvent: self.selectedEvent().enjoyAboutEvent(),
+                overall: self.selectedEvent().Overall(),
+                food: self.selectedEvent().Food(),
+                drinks: self.selectedEvent().Drinks(),
+                venue: self.selectedEvent().Venue(),
+                improvementsAboutEvent: self.selectedEvent().improvementsAboutEvent(),
+                talks: self.selectedEvent().talks().map(talk => ({
+                    id: talk.talkId,
+                    title: talk.title,
+                    speaker: talk.speaker, 
+                    rating: talk.rating,
+                    enjoyAboutTalk:  talk.enjoyAboutTalk,
+                    improvementsAboutTalk: talk.improvementsAboutTalk
+                 }))};
 
-            console.log(ko.toJSON(viewModel));
+            console.log(ko.toJSON(request));
+            // $.post(dotnetsheff.constants.apiUri + "/feedback/")
         };
 
         (function(){

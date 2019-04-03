@@ -2,7 +2,7 @@
 layout: page
 title: Feedback
 hero-title: Feedback
-hero-description: Please let us know what you think 
+hero-description: Please let us know what you think
 hero-image: logo.jpg
 learn-more-text: Help us make dotnetsheff better
 order: 3
@@ -10,41 +10,45 @@ permalink: /pages/feedback/
 ---
 
 <div id="feedback">
-   <div class="container">
+    <div class="container">
         <form data-bind="submit: sendFeedback">
             <div class="selection-container">
                 <label>Event:</label>
                 <select data-bind="options: events,
-                    optionsText: function(event){return event.Title},
+                    optionsText: 'title',
                     value: selectedEvent">
                 </select>
             </div>
-           <div class="rating-container">
-                <label for="overall">Overall: </label>
-                <div>{% include star-rating.html rating-for="Overall" %}</div>
+            <div data-bind="with: selectedEvent">
+                <div class="rating-container">
+                    <label for="overall">Overall: </label>
+                    <div>{% include star-rating.html rating-for="Overall" %}</div>
+                </div>
+                <div class="rating-container">
+                    <label for="overall">Food: </label>
+                    <div>{% include star-rating.html rating-for="Food" %}</div>
+                </div>
+                <div class="rating-container">
+                    <label for="overall">Drinks: </label>
+                    <div>{% include star-rating.html rating-for="Drinks" %}</div>
+                </div>
+                <div class="rating-container">
+                    <label for="overall">Venue: </label>
+                    <div>{% include star-rating.html rating-for="Venue" %}</div>
+                </div>
+                <div class="form-group">
+                    <label for="enjoy-about-event">What did you enjoy about the event?</label>
+                    <textarea class="form-control" rows="2" id="enjoy-about-event" name="enjoy-about-event"
+                        data-bind="value: enjoyAboutEvent"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="impovements-about-event">Any improvements to suggest?</label>
+                    <textarea class="form-control" rows="2" id="improvements-about-event"
+                        name="improvements-about-event" data-bind="value: improvementsAboutEvent"></textarea>
+                </div>
+                {% include feedback-talks.html %}
             </div>
-            <div class="rating-container">
-                <label for="overall">Food: </label>
-                <div>{% include star-rating.html rating-for="Food" %}</div>
-            </div>
-            <div class="rating-container">
-                <label for="overall">Drinks: </label>
-                <div>{% include star-rating.html rating-for="Drinks" %}</div>
-            </div>
-            <div class="rating-container">
-                <label for="overall">Venue: </label>
-                <div>{% include star-rating.html rating-for="Venue" %}</div>
-            </div>
-            <div class="form-group">
-                <label for="enjoy-about-event">What did you enjoy about the event?</label>
-                <textarea class="form-control" rows="2" id="enjoy-about-event" name="enjoy-about-event" data-bind="value: enjoyAboutEvent"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="impovements-about-event">Any improvements to suggest?</label>
-                <textarea class="form-control" rows="2" id="improvements-about-event" name="improvements-about-event" data-bind="value: improvementsAboutEvent"></textarea>
-            </div>
-            {% include feedback-talks.html %}
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
-    </div> 
+    </div>
 </div>
