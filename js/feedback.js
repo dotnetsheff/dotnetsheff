@@ -15,8 +15,8 @@
         this.title = title;
         this.speaker = speaker;
         this.rating = ko.observable();
-        this.enjoyAboutTalk = ko.observable();
-        this.improvementsAboutTalk = ko.observable();
+        this.enjoyed= ko.observable();
+        this.improvements= ko.observable();
     };
 
     dotnetsheff.viewModels.FeedbackEventViewModel = function(id, title, talks){
@@ -27,8 +27,8 @@
         this.Food = ko.observable();
         this.Drinks = ko.observable();
         this.Venue = ko.observable();
-        this.enjoyAboutEvent = ko.observable();
-        this.improvementsAboutEvent = ko.observable();
+        this.enjoyed= ko.observable();
+        this.improvements= ko.observable();
     }
 
     dotnetsheff.viewModels.FeedbackEventsViewModel = function () {
@@ -53,20 +53,21 @@
         {
              var request = {
                 id: self.selectedEvent().id(),
-                enjoyAboutEvent: self.selectedEvent().enjoyAboutEvent(),
                 overall: self.selectedEvent().Overall(),
                 food: self.selectedEvent().Food(),
                 drinks: self.selectedEvent().Drinks(),
                 venue: self.selectedEvent().Venue(),
-                improvementsAboutEvent: self.selectedEvent().improvementsAboutEvent(),
+                enjoyed: self.selectedEvent().enjoyed(),
+                improvements: self.selectedEvent().improvements(),
                 talks: self.selectedEvent().talks().map(talk => ({
                     id: talk.talkId,
                     title: talk.title,
                     speaker: talk.speaker, 
                     rating: talk.rating,
-                    enjoyAboutTalk:  talk.enjoyAboutTalk,
-                    improvementsAboutTalk: talk.improvementsAboutTalk
-                 }))};
+                    enjoyed:  talk.enjoyed,
+                    improvements: talk.improvements
+                }))
+                };
 
             console.log(ko.toJSON(request));
             // $.post(dotnetsheff.constants.apiUri + "/feedback/")
