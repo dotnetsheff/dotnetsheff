@@ -27,8 +27,8 @@
         this.Food = ko.observable();
         this.Drinks = ko.observable();
         this.Venue = ko.observable();
-        this.enjoyed= ko.observable();
-        this.improvements= ko.observable();
+        this.enjoyed = ko.observable();
+        this.improvements = ko.observable();
     }
 
     dotnetsheff.viewModels.FeedbackEventsViewModel = function () {
@@ -53,6 +53,7 @@
         {
              var request = {
                 id: self.selectedEvent().id(),
+                title: self.selectedEvent().title(),
                 overall: self.selectedEvent().Overall(),
                 food: self.selectedEvent().Food(),
                 drinks: self.selectedEvent().Drinks(),
