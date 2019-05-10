@@ -10,16 +10,16 @@
         viewModels: {}
     };
 
-    dotnetsheff.viewModels.FeedbackTalkViewModel = function(talkId, title, speaker){
+    dotnetsheff.viewModels.FeedbackTalkViewModel = function (talkId, title, speaker) {
         this.talkId = talkId;
         this.title = title;
         this.speaker = speaker;
         this.rating = ko.observable();
-        this.enjoyed= ko.observable();
-        this.improvements= ko.observable();
+        this.enjoyed = ko.observable();
+        this.improvements = ko.observable();
     };
 
-    dotnetsheff.viewModels.FeedbackEventViewModel = function(id, title, talks){
+    dotnetsheff.viewModels.FeedbackEventViewModel = function (id, title, talks) {
         this.id = ko.observable(id);
         this.title = ko.observable(title);
         this.talks = ko.observableArray(talks);
@@ -37,21 +37,20 @@
         self.events = ko.observableArray();
         self.selectedEvent = ko.observable();
 
-        var fetchFeedbackEvents = function(){
-            $.getJSON(dotnetsheff.constants.apiUri + "/feedback/available-events", 
-            function(data){
-                var events = data.map(event => {
-                    var talks = event.Talks.map((talk,index) => new dotnetsheff.viewModels.FeedbackTalkViewModel(`${event.Id}-${index}`, talk.Title, talk.Speaker));
-                    return new dotnetsheff.viewModels.FeedbackEventViewModel(event.Id, event.Title, talks)
-                });
+        var fetchFeedbackEvents = function () {
+            $.getJSON(dotnetsheff.constants.apiUri + "/feedback/available-events",
+                function (data) {
+                    var events = data.map(event => {
+                        var talks = event.Talks.map((talk, index) => new dotnetsheff.viewModels.FeedbackTalkViewModel(`${event.Id}-${index}`, talk.Title, talk.Speaker));
+                        return new dotnetsheff.viewModels.FeedbackEventViewModel(event.Id, event.Title, talks)
+                    });
 
-                self.events(events);
-            });
+                    self.events(events);
+                });
         };
-        
-        self.sendFeedback = function()
-        {
-             var request = {
+
+        self.sendFeedback = function () {
+            var request = {
                 id: self.selectedEvent().id(),
                 title: self.selectedEvent().title(),
                 overall: self.selectedEvent().Overall(),
@@ -63,25 +62,43 @@
                 talks: self.selectedEvent().talks().map(talk => ({
                     id: talk.talkId,
                     title: talk.title,
-                    speaker: talk.speaker, 
+                    speaker: talk.speaker,
                     rating: talk.rating,
-                    enjoyed:  talk.enjoyed,
+                    enjoyed: talk.enjoyed,
                     improvements: talk.improvements
                 }))
-                };
+            };
 
-            console.log(ko.toJSON(request));
-            // $.post(dotnetsheff.constants.apiUri + "/feedback/")
+            var $sending = $("#sending");
+            var $message = $("#message");
+
+            $sending.show();
+            $message.hide();
+
+            $.post(dotnetsheff.constants.apiUri + "/feedback/", ko.toJSON(request))
+                .done(function (response) {
+                    console.log(response);
+                    $sending.hide();
+                    $("form").replaceWith("<div>Thank you for the feedback!</div>");
+                })
+                .fail(function (response) {
+                    $sending.hide();
+                    $message.html("Something went wrong. Please try again.");
+                    $message.addClass("alert alert-danger");
+                    $message.show();
+                    console.log(response);
+                });
         };
 
-        (function(){
+        (function () {
             fetchFeedbackEvents();
         })();
     };
 
     $(function () {
-        if($('#feedback')[0]) {
+        if ($('#feedback')[0]) {
             ko.applyBindings(new dotnetsheff.viewModels.FeedbackEventsViewModel(), $('#feedback')[0]);
+            $("#sending").hide();
         }
     });
 }());

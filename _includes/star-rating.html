@@ -1,8 +1,10 @@
 <fieldset class="rating">
     {% for rating in (1..5) reversed %}
-        <input type="radio" id="{{include.rating-for}}-{{rating}}" value="{{rating}}" data-bind="checked: {{include.rating-for}}"/>
-        <label class="full" for="{{include.rating-for}}-{{rating}}" title="{{rating}}"></label>
-        <input type="radio" id="{{include.rating-for}}-{{rating | minus: 0.5}}" value={{rating | minus: 0.5}} data-bind="checked: {{include.rating-for}}"/>
-        <label class="half" for="{{include.rating-for}}-{{rating | minus: 0.5}}" title="{{rating | minus: 0.5}}"></label>
+    <input type="radio" id="{{include.rating-for}}-{{rating}}" value="{{rating}}"
+        data-bind="checked: {{include.rating-for}}" />
+    <label class="full" for="{{include.rating-for}}-{{rating}}" title="{{rating}}"></label>
+    <input type="radio" id="{{include.rating-for}}-{{rating | minus: 0.5}}" value={{rating | minus: 0.5}}
+        data-bind="checked: {{include.rating-for}}" />
+    <label class="half" for="{{include.rating-for}}-{{rating | minus: 0.5}}" title="{{rating | minus: 0.5}}"></label>
     {% endfor %}
- </fieldset>
+</fieldset>
