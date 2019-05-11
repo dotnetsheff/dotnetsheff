@@ -36,6 +36,10 @@
 
         self.events = ko.observableArray();
         self.selectedEvent = ko.observable();
+        self.message = ko.observable();
+        self.showForm = ko.observable(true);
+        self.sayThankYou = ko.observable(false);
+        self.showError = ko.observable(false);
 
         var fetchFeedbackEvents = function () {
             $.getJSON(dotnetsheff.constants.apiUri + "/feedback/available-events",
@@ -44,7 +48,6 @@
                         var talks = event.Talks.map((talk, index) => new dotnetsheff.viewModels.FeedbackTalkViewModel(`${event.Id}-${index}`, talk.Title, talk.Speaker));
                         return new dotnetsheff.viewModels.FeedbackEventViewModel(event.Id, event.Title, talks)
                     });
-
                     self.events(events);
                 });
         };
@@ -69,23 +72,14 @@
                 }))
             };
 
-            var $sending = $("#sending");
-            var $message = $("#message");
-
-            $sending.show();
-            $message.hide();
-
             $.post(dotnetsheff.constants.apiUri + "/feedback/", ko.toJSON(request))
                 .done(function (response) {
                     console.log(response);
-                    $sending.hide();
-                    $("form").replaceWith("<div>Thank you for the feedback!</div>");
+                    self.showForm(false);
+                    self.sayThankYou(true);
                 })
                 .fail(function (response) {
-                    $sending.hide();
-                    $message.html("Something went wrong. Please try again.");
-                    $message.addClass("alert alert-danger");
-                    $message.show();
+                    self.showError(true);
                     console.log(response);
                 });
         };
@@ -98,7 +92,6 @@
     $(function () {
         if ($('#feedback')[0]) {
             ko.applyBindings(new dotnetsheff.viewModels.FeedbackEventsViewModel(), $('#feedback')[0]);
-            $("#sending").hide();
         }
     });
 }());
