@@ -242,7 +242,9 @@
 
 	// Document on load.
 	$(function(){
-		ko.applyBindings(new dotnetsheff.viewModels.HomeViewModel());
+		if($('#home')[0]) {
+			ko.applyBindings(new dotnetsheff.viewModels.HomeViewModel(), $('#home')[0]);
+		}
 		gotToNextSection();
 		loaderPage();
 		fullHeight();
