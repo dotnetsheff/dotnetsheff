@@ -1,8 +1,41 @@
-.rating-container {
+.rating-container,
+.selection-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 250px;
+}
+
+.selection-container > label,
+.rating-container > label {
+  flex: 1 0 18%;
+}
+
+.rating-container > .star-container,
+.selection-container > select {
+  flex: 1 0 82%;
+}
+
+.selection-container > select {
+  max-width: calc(90% - 2rem);
+}
+
+@media (min-width: 648px) {
+  .selection-container > label,
+  .rating-container > label {
+    flex: 1 0 10%;
+  }
+
+  .rating-container > .star-container,
+  .selection-container > select {
+    flex: 1 0 90%;
+  }
+}
+
+
+.star-container {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 0 calc(20% - 2rem);
 }
 
 .rating { 
@@ -26,7 +59,7 @@
 
 .rating > label { 
   color: #ddd; 
- float: right; 
+ float: right;
 }
 
 .rating > input:checked ~ label, /* show gold star when clicked */
