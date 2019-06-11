@@ -262,19 +262,19 @@
   youtube-id: SzJ7fF_oghc
   meetup-event-id: 256072466
   
-  - title: Advanced Entity Framework Techniques
+- title: Advanced Entity Framework Techniques
   speaker: Andrew Gunn 
   date: 2019-06-04
   youtube-id: 1CX6b4W8sZw
   meetup-event-id: 254579825
   
-  - title: Nullable reference types in C# 8
+- title: Nullable reference types in C# 8
   speaker:  Michael Steele 
   date: 2019-06-04
   youtube-id: izVIL-9h3WE
   meetup-event-id: 254579825
   
-  - title: Forming clouds with Terraform 
+- title: Forming clouds with Terraform 
   speaker: Kevin Smith
   date: 2019-06-04
   youtube-id: qfAlthOZb1g
