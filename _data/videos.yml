@@ -286,9 +286,45 @@
   youtube-id: t9g-GogZDeo
   meetup-event-id: 256248002
   
-- title: Introduction to Splunk with Tom West
+- title: Introduction to Splunk
   speaker: Tom West
   date: 2019-05-07
   youtube-id: W-i0gaAk96A
-  meetup-event-id: 256248002  
+  meetup-event-id: 256248002
+  
+- title: Pimp(I) your  NET code
+  speaker: Zeb Mason
+  date: 2019-06-04
+  youtube-id: iHYO-XRp75Q
+  meetup-event-id: 254579825
+  
+- title: What is this WebAssembly thing anyway?
+  speaker: John Stovin
+  date: 2019-06-04
+  youtube-id: W-i0gaAk96A
+  meetup-event-id: 254579825
+  
+- title: Debugging with Git Bisect
+  speaker: Luke Stringer
+  date: 2019-06-04
+  youtube-id: Ks10Mv_KxNI
+  meetup-event-id: 254579825
+  
+- title: It's Alive!! ASP.NET Core Health Checks
+  speaker: Chris Amery
+  date: 2019-06-04
+  youtube-id: GmSicQNuKnE
+  meetup-event-id: 254579825
+  
+- title: Carter - Micro-frameworks
+  speaker: Tom West
+  date: 2019-07-02
+  youtube-id: Eljo2teXbPk
+  meetup-event-id: 258184675
+
+- title: Storage and analysis of large time-series datasets
+  speaker: Robin Hartley
+  date: 2019-07-02
+  youtube-id: aFABrJOiXkg
+  meetup-event-id: 258184675
   
