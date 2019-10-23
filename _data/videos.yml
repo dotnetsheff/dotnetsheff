@@ -326,5 +326,35 @@
   speaker: Robin Hartley
   date: 2019-07-02
   youtube-id: aFABrJOiXkg
-  meetup-event-id: 258184675
+  meetup-event-id: 258184675  
+
+- title: MIX IT UP: An Introduction to Elixir.
+  speaker: Mike Bowen
+  date: 2019-08-06
+  youtube-id: f2zv6WAU2uo
+  meetup-event-id: 258898537
+  
+- title: Solving microservices challenges on the Kubernetes platform
+  speaker: Shahid Iqbal
+  date: 2019-08-06
+  youtube-id: 1UbTlrGhM7M
+  meetup-event-id: 258898537
+  
+- title: Building .NET Core Apps using AWS and the Serverless Framework
+  speaker: Jon Vines
+  date: 2019-09-03
+  youtube-id: Ze1fNIpL_Lg
+  meetup-event-id: 258763175
+  
+- title: Event Driven Collaboration
+  speaker: Ian Cooper
+  date: 2019-09-03
+  youtube-id: DLRMQDquWK4
+  meetup-event-id: 258763175
+  
+- title: C# 8 Features
+  speaker: Jon Skeet
+  date: 2019-19-01
+  youtube-id: V3LrQBhZNP4
+  meetup-event-id: 259000677
   
