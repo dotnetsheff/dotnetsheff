@@ -395,8 +395,32 @@
   meetup-event-id: 261537753
 
 - title: PlantUML in Azure DevOps
-  speaker: PlantUML in Azure DevOps
+  speaker: Jon Morley-Jones
   date: 2020-01-07
   youtube-id: VGrFmVnMxtg
   meetup-event-id: 261537753
+  
+- title: Dramatic History of the Web Browser
+  speaker: Andy Carter
+  date: 2020-02-04
+  youtube-id: KziWxegPrww
+  meetup-event-id: 263459355
+
+- title: OneOf Libary
+  speaker: Kevin Smith
+  date: 2020-02-04
+  youtube-id: HAcyoAyt4D8
+  meetup-event-id: 263459355
+
+- title: IoT with nothing but your Laptop
+  speaker: Pete Gallagher
+  date: 2020-03-03
+  youtube-id: Qu1BYU1sDeM
+  meetup-event-id: 264613221
+
+- title: Brittleness of Architecture
+  speaker: David Whitney
+  date: 2020-03-03
+  youtube-id: pIrckufQacc
+  meetup-event-id: 264613221
   
