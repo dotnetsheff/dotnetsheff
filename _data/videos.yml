@@ -370,3 +370,33 @@
   youtube-id: kLl2Mt3eYxU
   meetup-event-id: 259322674
   
+- title: AWS Lambda with C#
+  speaker: James Charlesworth
+  date: 2020-01-07
+  youtube-id: Km5G9sNUmV8
+  meetup-event-id: 261537753
+
+- title: Feature Management in .NET
+  speaker: Kevin Smith
+  date: 2020-01-07
+  youtube-id: lJ1Wv9spL3Q
+  meetup-event-id: 261537753
+
+- title: Chrome DevTools Tricks
+  speaker: Danny Jones
+  date: 2020-01-07
+  youtube-id: ZN1YTidYGMk
+  meetup-event-id: 261537753
+
+- title: Polly 
+  speaker: Michael Steele
+  date: 2020-01-07
+  youtube-id: IukUnWIIx8k
+  meetup-event-id: 261537753
+
+- title: PlantUML in Azure DevOps
+  speaker: PlantUML in Azure DevOps
+  date: 2020-01-07
+  youtube-id: VGrFmVnMxtg
+  meetup-event-id: 261537753
+  
