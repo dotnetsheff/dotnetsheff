@@ -423,4 +423,22 @@
   date: 2020-03-03
   youtube-id: pIrckufQacc
   meetup-event-id: 264613221
+
+- title: What is Blazor? And why’s it so exciting?
+  speaker: Chris Sainty
+  date: 2020-04-07
+  youtube-id: JzVkJpFjm-4
+  meetup-event-id: 269742837
+
+- title: Logging, instrumentation, dashboards, alerts and all that
+  speaker: Henry Been
+  date: 2020-04-22
+  youtube-id: 4RFcWH6-FVA
+  meetup-event-id: 269763121
+
+- title: How Event Modeling Makes Sense of Information Systems
+  speaker: Adam Dymitruk
+  date: 2020-04-22
+  youtube-id: xmpYvu_NsEI
+  meetup-event-id: 269763121
   
