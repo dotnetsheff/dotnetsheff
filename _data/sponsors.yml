@@ -219,9 +219,9 @@
 
 - name: Packt
   type: Prize Sponsor
-  description: PostSharp provide free giveaway books
+  description: Packt provide free giveaway books
   image: packt.png
-  website: https://www.packtpub.com/
+  website: https://www.amazon.com/stores/page/90FFA86D-8496-4669-9CBC-1AE9D538D2AA?ingress=0&visitId=0cfd73ff-3dff-4c3c-8f99-b7d8fe4856ad
   agreements:
     - "2021-06"
     - "2021-07"
