@@ -198,7 +198,7 @@
 	};
 
 	var dotnetsheff = {
-		constants: { apiUri: "https://dotnetsheff.azureedge.net/api/"},
+		constants: { apiUri: "https://dotnetsheff.co.uk/api/"},
 		viewModels: {}
 	};
 	
