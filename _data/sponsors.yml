@@ -288,3 +288,13 @@
     - "2023-04"
     - "2023-05"
     - "2023-06"
+
+- name: Goodlord
+  type: Bronze Sponsor
+  description: Jet2 ad hocly supports events.
+  image: goodlord.jpg
+  website: https://www.goodlord.co/
+  agreements:
+    - "2024-09"
+    - "2024-10"
+    - "2024-11"
