@@ -298,3 +298,13 @@
     - "2024-09"
     - "2024-10"
     - "2024-11"
+
+- name: Latimer Tuition
+  type: Bronze Sponsor
+  description: Latimer Tuition ad hocly supports events.
+  image: latimertuition.jpg
+  website: https://latimertuition.com/
+  agreements:
+    - "2025-02"
+    - "2025-03"
+    - "2025-04"
