@@ -217,9 +217,15 @@
 
 - name: Sheffield Hallam University
   type: Venue Sponsor
-  description: Sheffield Hallam University provide venue arrangements to make it possible to host our events every month.
+  description: Sheffield Hallam University provide venue arrangements to make it possible to host our events.
   image: sheffield_hallam_university.jpg
   website: https://www.shu.ac.uk/
+
+- name: Sheffield Technology Parks
+  type: Venue Sponsor
+  description: Sheffield Technology Parks provide venue arrangements to make it possible to host our events.
+  image: sheffield_technology_parks.jpg
+  website: https://shefftechparks.com/
 
 - name: Pusher
   type: Video Sponsor
