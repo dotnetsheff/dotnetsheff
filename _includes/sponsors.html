@@ -12,33 +12,51 @@
         
         {% for sponsor in site.data.sponsors %}
             {% unless sponsor.agreements %}
-                {% assign current_sponsors = current_sponsors | push: sponsor %}
+            {% assign current_sponsors = current_sponsors | push: sponsor %}
             {% endunless %}
         {% endfor %} 
         
-        {% for sponsor in current_sponsors %}
-  
+        {% assign sorted_sponsors = current_sponsors | sort: "type" %}
+        {% assign priority_order = "Gold Sponsor,Silver Sponsor,Bronze Sponsor,Prize Sponsor,Venue Sponsor" | split: "," %}
+        {% assign ordered_sponsors = "" | split: "" %}
+        
+        {% for priority in priority_order %}
+            {% for sponsor in sorted_sponsors %}
+            {% if sponsor.type == priority %}
+                {% assign ordered_sponsors = ordered_sponsors | push: sponsor %}
+            {% endif %}
+            {% endfor %}
+        {% endfor %}
+        
+        {% for sponsor in sorted_sponsors %}
+            {% unless priority_order contains sponsor.type %}
+            {% assign ordered_sponsors = ordered_sponsors | push: sponsor %}
+            {% endunless %}
+        {% endfor %}
+        
+        {% for sponsor in ordered_sponsors %}
+      
         {% capture thecycle %}{% cycle '1', '2', '3' %}{% endcapture %}
-  
+      
         {% if thecycle == '1' %}
         <div class="row">
         {% endif %}
-  
+      
         <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
             <a href="{{sponsor.website}}" target="_blank" class="sponsor-item">
-                <img src="images/sponsors/{{sponsor.image}}" alt="{{sponsor.name}}" class="img-responsive center-block" />
-                <div class="text">
-                    <h2>{{sponsor.name}} - {{sponsor.type}}</h2>
-                    <p>{{sponsor.description}}</p>
-                </div>
+            <img src="images/sponsors/{{sponsor.image}}" alt="{{sponsor.name}}" class="img-responsive center-block" />
+            <div class="text">
+                <h2>{{sponsor.name}} - {{sponsor.type}}</h2>
+                <p>{{sponsor.description}}</p>
+            </div>
             </a>
         </div>
 
         {% if thecycle == '3' %}
         </div>
         {% endif %}
-  
-        {% endfor %}   
+      
+        {% endfor %}
 
     </div>
 </section>
