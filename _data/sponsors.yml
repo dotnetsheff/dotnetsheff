@@ -325,7 +325,7 @@
 - name: Flagstone Group
   type: Bronze Sponsor
   description: Flagstone ad hocly supports events.
-  image: flagstone.jpg
+  image: flagstone.png
   website: https://www.flagstoneim.com/
   agreements:
     - "2025-05"
