@@ -322,7 +322,7 @@
     - "2025-03"
     - "2025-04"
 
-- name: Flagstone Group
+- name: Flagstone
   type: Bronze Sponsor
   description: Flagstone ad hocly supports events.
   image: flagstone.png
