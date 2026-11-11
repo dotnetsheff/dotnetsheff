@@ -1,0 +1,41 @@
+name: Refresh YouTube videos
+
+on:
+  schedule:
+    # Once a month, at 06:00 UTC on the 1st.
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch latest videos
+        run: node scripts/fetch-videos.mjs
+
+      - name: Commit updated videos
+        run: |
+          if [ -n "$(git status --porcelain data/youtube-videos.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/youtube-videos.json
+            git commit -m "chore: refresh latest YouTube videos"
+            git push
+          else
+            echo "No changes to the YouTube videos cache."
+          fi

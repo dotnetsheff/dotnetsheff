@@ -1,10 +1,14 @@
+- question: What is DotNetSheff?
+  answer: >
+    DotNetSheff is a friendly Sheffield tech meetup for anyone interested in software development, .NET, AI, web, cloud, games, architecture, and modern engineering.
+
 - question: When does dotnetsheff run?
   answer: >
-    dotnetsheff event runs every first Tuesday of the month and starts at 18:30.
+    DotNetSheff usually runs monthly in person and starts at 18:30. Check our [meetup page](https://www.meetup.com/dotnetsheff/) for the latest date.
 
 - question: Where is dotnetsheff hosted?
   answer: >
-    We host at Hallam University, however the room changes from time to time so its best to check our [meetup page](https://www.meetup.com/dotnetsheff/) on the day of the event.
+    We host events across Sheffield Hallam University, Sheffield Technology Parks, and Goodlord Offices. The venue can change between events, so it's best to check our [meetup page](https://www.meetup.com/dotnetsheff/) before travelling.
 
 - question: What time do I need to arrive at the venue?
   answer: >
@@ -12,11 +16,11 @@
 
 - question: What time do I need to arrive at the venue if I am speaking?
   answer: >
-    If you are speaking then try to arrive at 18:00, this will give us sometime to make sure everything is working.
+    If you are speaking, try to arrive at 18:00. This gives us some time to make sure everything is working.
 
 - question: Do you provide food and drinks?
   answer: >
-    We have alcoholic and soft drinks throughout the night and also have a delivery of pizza halfway through the event.
+    Yes. We usually provide free pizza, beer, and soft drinks during the event.
 
 - question: Do you cater for dietary requirements?
   answer: >
@@ -24,25 +28,24 @@
 
 - question: Are you close to public transport?
   answer: >
-    Yes, the [Bus Station](https://goo.gl/maps/MqPcwKRpgUq) and [Train Station](https://goo.gl/maps/YYQKiji4bGm) are less than 5 minutes walk from our venue.
+    Yes. Our venues are usually close to Sheffield train station, bus routes, or tram stops. Check the event venue on our [meetup page](https://www.meetup.com/dotnetsheff/) before travelling.
 
 - question: Does the venue have parking?
   answer: >
-    We don't provide designated parking, however you can park at the [Hallam Uni Science Car Park](https://en.parkopedia.co.uk/parking/carpark/science_park_b/s1/sheffield/) for £1.
+    We don't usually provide designated parking. Check the event venue and nearby parking options before travelling.
 
 - question: Can I speak at dotnetsheff?
   answer: >
-    Yes, We have lots of different events to cater for a range of skills sets, Just get in contact with us and we will arrange when you can speak. 
+    Yes. We welcome talks across software development, .NET, AI, web, cloud, games, architecture, and modern engineering. Please get in touch via [Twitter (@dotnetsheff)](https://x.com/dotnetsheff) or email [organisers@dotnetsheff.co.uk](mailto:organisers@dotnetsheff.co.uk).
 
 - question: I missed the last event, can I watch it online?
   answer: >
-    All our events are hosted online via out [website](/pages/videos) so you can easily revisit them later.
+    Many of our events are available via our [videos page](/pages/videos/) so you can revisit them later.
 
-- question: I have never used .NET but your next event sounds interesting, can I still attend?
+- question: I am new to tech or have never used .NET. Can I still attend?
   answer: >
-    No matter what your background or skill set we welcome anyone to come and join in.
+    Yes. Whether you're a student, junior developer, experienced engineer, or just curious about tech, you're welcome.
 
 - question: Can you advertise my job?
   answer: >
-    We don't advertise jobs at the event. We want the event to be more about sharing and leaning however we have no problem with you coming along and doing a bit of networking!
-
+    We don't advertise jobs during the event. We want the event to focus on sharing and learning, but you're welcome to come along and network.
